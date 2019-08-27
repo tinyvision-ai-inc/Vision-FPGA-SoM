@@ -43,7 +43,7 @@ The board edge castellations share the same pinout and can be used to reduce ove
 |28 |VDDIO_2 |Voltage reference for the FPGA Bank 2|
 
 ### Image subsystem
-The module has an installed Pixart imager (PAJ6100) which is capable of qVGA (320x240), monochrome global shutter with excellent low light performance due to the large pixels. The imager uses SPI for control and an 8-bit parallel data bus with framing signals for the data. This device requires a 6MHz (nominal) clock for its internal operations.
+The module has an installed Pixart imager (PAJ6100) which is capable of qVGA (320x240), monochrome global shutter with excellent low light performance due to the large pixels (3um). The imager uses SPI for control and an 8-bit parallel data bus with framing signals for the data. This device requires a 6MHz (nominal) clock for its internal operations.
 The Himax HMB010 imager is supported by providing a high-density connector with the right pinout. Note that the Himax imager requires multiple voltages for optimal operation which has not been provided in this version of the board.
 An Omnivision compatible flex is provided in addition that allows a cheap but higher power camera to be plugged in with a variety of lens options for specific applications.
 The Pixart imager can be held in reset to prevent it from interfering in any way with the Himax/Omnivision sensor by tying the PIX_RESET_N line low on the castellation/connector.

@@ -1,6 +1,11 @@
 # SoM Details
-- The detailed SoM specification is located [here](./SoM_Specification.md).
-- Schematics are located [here](./Schematics)
-- Sample images taken with the imager are located [here](./Misc/Images)
-- Sample designs may be found [here](./RTL)
-- Detailed mechanical drawings are located [here](./Medchanical)
+![SoM](../resources/images/SoM_block_diagram.png)
+- [High level interconnect](./SoM_interconnect_details.png)
+- [Detailed SoM specification](./SoM_Specification.md).
+- [Schematics](./Schematics)
+- [Verilog examples](./RTL)
+- [Mechanical details](./Medchanical)
+- Sensor data
+  - [Image sensor data](./Misc/Images)
+  - [Microphone data](Misc/Audio)
+  - [IMU data](./Misc/IMU)

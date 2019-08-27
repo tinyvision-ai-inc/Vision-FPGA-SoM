@@ -1,10 +1,15 @@
 ![tinyVision.ai Inc.](./resources/images/TVAI-FINAL-01-tight.png)
-# Vision FPGA SoM
-## Low Power Vision, Audio &amp; motion sensing/processing FPGA System on Module
+# Vision, Audio &amp; Motion FPGA SoM
+## Low Power Sensing/processing System on Module
 
-The FPGA SoM enables IoT devices to see, hear and sense motion. This is a tightly integrated platform consisting of a low power image sensor, IMU and microphone coupled to a local computing device (Lattice ultra low power ICE40 5K FPGA). The SoM is designed to be dropped into end products as-is with no hardware modifications, significantly shortening the time to market of the end product.
+The Vision, Audio and Motion FPGA SoM enables IoT devices to see, hear and sense motion. This is a tightly integrated platform consisting of a low power image sensor, microphone and 6-DoF IMU coupled to a local computing device ([Lattice ultra low power ICE40 UltraPlus 5K FPGA](http://www.latticesemi.com/en/Products/FPGAandCPLD/iCE40UltraPlus)).
 
-![Diagram](./resources/images/SoM_block_diagram.png)
+Typical applications of the SoM include image capture, trigger/capture images on motion (vision or IMU based), human face/presence detection, keyphrase detection and gestures.
+
+
+The SoM is designed to be integrated into devices to enable edge computing, significantly shortening the time to market and allowing the developer to focus on their differentiation.
+
+![Vision Audio and Motion FPGA SoM Diagram](./resources/images/SoM_block_diagram.png)
 
 The module integrates the following capabilities:
 
@@ -29,8 +34,9 @@ The module integrates the following capabilities:
 - Supports the Lattice [SensAI](https://www.latticesemi.com/sensAI) toolchain using Tensorflow/Caffe/Keras for model development, quantization and mapping to the SensAI Neural Network engines.
   - Single and 8-bit neural networks
   - Models provided for face and human presence detection, gestures
-  - Performance of TBD fps for inferencing at TBD mW
+  - Performance of >30 fps for inferencing at <15 mW
+- [Developer kit](./SoM/SoM_devkit_details.png) enables fast prototyping of complete end applications with an on-board Wifi/BLE module, various connectors, Lipoly charger etc.
 
 For more details, please see the [Datasheet](./Sensor_FPGA_SoM_data_sheet_2.0.pdf) and [SoM specification](SoM/README.md).
 
-Modules and developer kits are available at the tinyVision.ai [store](https://tinyvision.ai/collections/frontpage).
+Modules and developer kits are available at the tinyVision.ai [store](https://tinyvision.ai/collections/frontpage). Please contact us for questions about the module at: <sales.at.tinyvision.ai> .
