@@ -1,7 +1,10 @@
+![tinyVision.ai Inc.](./resources/images/TVAI-FINAL-01-tight.png)
 # Vision-FPGA-SoM
+
 tinyVision.ai Vision &amp; Sensor FPGA System on Module
 
 The FPGA SoM enables IoT devices to see, hear and sense motion. The SoM is a tightly integrated platform consisting of a low power image sensor, IMU and microphone coupled to a local computing device (Lattice ultra low power ICE40 5K FPGA). The modules are designed to be dropped into end products as-is with no Hardware modifications, significantly shortening the time to market of the end product.
+
 
 The module integrates the following hardware capabilities:
 
@@ -25,4 +28,4 @@ The module integrates the following hardware capabilities:
   - External 3.3V, 1.8V, 1.2V for lower power operation
 - SW support	using the Lattice SensAI toolchain which supports Tensorflow/Caffe/Keras for model development, toolchain for quantization and mapping to Neural Network engines.
 
-For more details, please see the [SoM high level datasheet](./Sensor FPGA SoM data sheet 2.0.pdf) and [Detailed SoM specification](SoM/SoM_Specification.md).
+For more details, please see the [Datasheet](./Sensor_FPGA_SoM_Datasheet_2.0.pdf) and [SoM specification](SoM/README.md).
