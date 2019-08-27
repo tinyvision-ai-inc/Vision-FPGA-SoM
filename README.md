@@ -4,6 +4,7 @@
 
 The FPGA SoM enables IoT devices to see, hear and sense motion. This is a tightly integrated platform consisting of a low power image sensor, IMU and microphone coupled to a local computing device (Lattice ultra low power ICE40 5K FPGA). The SoM is designed to be dropped into end products as-is with no hardware modifications, significantly shortening the time to market of the end product.
 
+![Diagram](./resources/images/SoM_block_diagram.png)
 The module integrates the following capabilities:
 
 - Local processing using the Lattice ICE40 Ultra-low-power FPGA, 5K LUT, 1Mb RAM, 8 MAC units
