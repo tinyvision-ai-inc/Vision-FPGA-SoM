@@ -5,9 +5,10 @@
 The FPGA SoM enables IoT devices to see, hear and sense motion. This is a tightly integrated platform consisting of a low power image sensor, IMU and microphone coupled to a local computing device (Lattice ultra low power ICE40 5K FPGA). The SoM is designed to be dropped into end products as-is with no hardware modifications, significantly shortening the time to market of the end product.
 
 ![Diagram](./resources/images/SoM_block_diagram.png)
+
 The module integrates the following capabilities:
 
-- Local processing using the Lattice ICE40 Ultra-low-power FPGA, 5K LUT, 1Mb RAM, 8 MAC units
+- Local processing using the Lattice ICE40 Ultra Plus 5K Ultra-low-power FPGA, 5K LUT, 1Mb RAM, 8 MAC units
 - Image sensor options
   - Integrated qVGA monochrome global shutter imager (Pixart PAJ6100U6)
   - Connector for color/monochrome rolling shutter imager (Himax HMB010)
@@ -25,7 +26,10 @@ The module integrates the following capabilities:
 - 2 power options:
   - Single 3.3V operation, can supply 1.8V and 1.2V @100mA (max) to external devices using onboard LDO
   - External 3.3V, 1.8V, 1.2V for lower power operation
-- SW support	using the Lattice [SensAI](https://www.latticesemi.com/sensAI) toolchain which supports Tensorflow/Caffe/Keras for model development, toolchain for quantization and mapping to Neural Network engines.
+- Supports the Lattice [SensAI](https://www.latticesemi.com/sensAI) toolchain using Tensorflow/Caffe/Keras for model development, quantization and mapping to the SensAI Neural Network engines.
+  - Single and 8-bit neural networks
+  - Models provided for face and human presence detection, gestures
+  - Performance of TBD fps for inferencing at TBD mW
 
 For more details, please see the [Datasheet](./Sensor_FPGA_SoM_data_sheet_2.0.pdf) and [SoM specification](SoM/README.md).
 
