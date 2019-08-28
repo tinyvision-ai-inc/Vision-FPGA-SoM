@@ -2,6 +2,8 @@
 # Vision, Audio &amp; Motion FPGA SoM
 ## Low Power Sensing/processing System on Module
 
+<img src="./resources/images/Module_front.jpg" alt="Module Front" width="200"/>
+
 The Vision, Audio and Motion FPGA SoM enables IoT devices to see, hear and sense motion. This is a tightly integrated platform consisting of a low power image sensor, microphone and 6-DoF IMU coupled to a local computing device ([Lattice ultra low power ICE40 UltraPlus 5K FPGA](http://www.latticesemi.com/en/Products/FPGAandCPLD/iCE40UltraPlus)).
 
 Typical applications of the SoM include image capture, trigger/capture images on motion (vision or IMU based), human face/presence detection, keyphrase detection and gestures.

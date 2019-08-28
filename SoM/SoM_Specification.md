@@ -3,9 +3,12 @@
 The Sensor module uses a Lattice iCE40UP5K QFN device as its core programmable device. This part is connected to and supported by various other components on the board as shown in the figure below.
 
 The board has an I2S microphone, Invensense IMU and an installed low power low-cost monochrome camera (PAJ6100U6) from Pixart Inc. In addition, provision is made for a Himax HM01B0 low power camera and also an OV7670 Omnivision flex connector. These options allow for various applications. An IR LED is connected to the Pixart sensor to allow for illumination of the scene with the LED synchronized to the shutter.
-The FPGA is connected to 4Mb of qSPI capable NOR flash for booting as well as storage of other code. The qSPI bus is shared with a 64Mb qSPI SRAM. The SRAMcan be used for buffering sensor or intermediate data such as video frames and/or audio streams. Selection between the flash and SRAM is done using dedicated active-low slave select lines.
+The FPGA is connected to 4Mb of qSPI capable NOR flash for booting as well as storage of other code. The qSPI bus is shared with a 64Mb qSPI SRAM. The SRAM can be used for buffering sensor or intermediate data such as video frames and/or audio streams. Selection between the flash and SRAM is done using dedicated active-low slave select lines.
 
 ## Electrical interface
+
+![High level interconnect](../resources/images/SoM_interconnect_details.png)
+
 ### Pinout & Signal description
 All signal levels on the interface are 3.3V CMOS unless otherwise noted. A 0.5mm pitch connector is used to connect to the host board. The mate to the connector has the MPN: DF23C-30DP-0.5V(92).
 The board edge castellations share the same pinout and can be used to reduce overall system cost by directly soldering the module to the host board. Note that in this configuration, the module will not have the microphone installed as it is bottom ported. The following table shows the pinout of the connector.
@@ -45,8 +48,8 @@ The board edge castellations share the same pinout and can be used to reduce ove
 ### Image subsystem
 The module has an installed Pixart imager (PAJ6100) which is capable of qVGA (320x240), monochrome global shutter with excellent low light performance due to the large pixels (3um). The imager uses SPI for control and an 8-bit parallel data bus with framing signals for the data. This device requires a 6MHz (nominal) clock for its internal operations.
 The Himax HMB010 imager is supported by providing a high-density connector with the right pinout. Note that the Himax imager requires multiple voltages for optimal operation which has not been provided in this version of the board.
-An Omnivision compatible flex is provided in addition that allows a cheap but higher power camera to be plugged in with a variety of lens options for specific applications.
-The Pixart imager can be held in reset to prevent it from interfering in any way with the Himax/Omnivision sensor by tying the PIX_RESET_N line low on the castellation/connector.
+An Omnivision OV7670 compatible flex is provided to interface with easily available higher power/resolution image sensors with a variety of lens options for specific applications.
+Since the data lines for the various image sensors are shared, the Pixart imager can be held in reset to prevent it from interfering in any way with the Himax/Omnivision sensor by tying the PIX_RESET_N line low on the castellation/connector.
 The Omnivision and Himax sensors use I2C as the control bus while the Pixart sensor uses SPI. The design overloads the SENSOR_SCK and SENSOR_MOSI for I2C communications. This should allow communication with the IMU to be transparent since the IMU_SSN line can be held inactive in this case.
 
 ### Memory subsystem
