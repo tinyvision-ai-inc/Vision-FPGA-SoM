@@ -73,7 +73,7 @@ The FPGA CRAM or the flash can be programmed. This requires the MISO and MOSI li
 
 
 ## Mechanicals
-The module measures 21.3mm x 31.3mm. A STEP file for the module to assist with mechanical integration is available [here](..resources/som_details/SoM_step.stp). A DXF file is available [here](../resources/som_details/SoM_mechanical_drawing.dxf)
+The module measures 21.3mm x 31.3mm. A STEP file for the module to assist with mechanical integration is available [here](../resources/som_details/SoM_step.stp). A DXF file is available [here](../resources/som_details/SoM_mechanical_drawing.dxf)
 
 ## Interface API
 The host interface consists of a SPI port capable of running at up to 6MHz (future FPGA code will increase this to >10MHz), an interrupt line and a couple of lines to select various FPGA programming modes.

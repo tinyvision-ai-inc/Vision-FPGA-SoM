@@ -39,6 +39,6 @@ The module integrates the following capabilities:
   - Performance of >30 fps for inferencing at <15 mW
 - [Developer kit](./SoM/SoM_devkit_details.png) enables fast prototyping of complete end applications with an on-board Wifi/BLE module, various connectors, Lipoly charger etc.
 
-For more details, please see the [Datasheet](../resources/som_details/Sensor_FPGA_SoM_data_sheet_2.0.pdf) and [SoM specification](SoM/README.md). A 3-D PDF rendering is available [here](../resources/som_details/SoM_3D.pdf).
+For more details, please see the [Datasheet](resources/som_details/Sensor_FPGA_SoM_data_sheet_2.0.pdf) and [SoM specification](SoM/README.md). A 3-D PDF rendering is available [here](resources/som_details/SoM_3D.pdf).
 
 Modules and developer kits are available at the tinyVision.ai [store](https://tinyvision.ai/). Please contact us for questions about the module at: <sales.at.tinyvision.ai> .
