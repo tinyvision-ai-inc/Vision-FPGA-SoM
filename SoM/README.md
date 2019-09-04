@@ -1,4 +1,4 @@
-<img src="../resources/images/Module_front.jpg" alt="Module Front" width="100"/>
+<img src="../resources/images/Module_front_annotated.png" alt="Module Front" width="400"/>
 <!img src="../resources/images/Module_back.jpg" alt="Module Back" width="100"/-->
 
 # SoM Details
