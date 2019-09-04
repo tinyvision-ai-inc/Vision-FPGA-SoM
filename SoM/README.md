@@ -11,9 +11,8 @@
   - [Image sensor data](./Misc/Images)
   - [Microphone data](Misc/Audio)
   - [IMU data](./Misc/IMU)
+- [STEP & DXF files](../resources/som_details/)
 - [Developer kit details](../resources/images/SoM_devkit_details.png)
 
 ## Mechanical
 The SoM is designed to be plugged into a connector on the host board or to be soldered down using the castellations to reduce system cost. Note that since the on-board microphone is bottom ported, this requires that the soldered down version not have a microphone which is an alternate part. Please contact us at sales.at.tinyvision.ai if this is of interest.
-- [STEP file](../resources/som_details/SoM_step.stp)
-- [Detailed mechanical drawing (DXF)](../resources/som_details/SoM_mechanical_drawing.dxf)
