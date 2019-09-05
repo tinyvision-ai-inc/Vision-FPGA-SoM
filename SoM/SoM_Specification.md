@@ -1,6 +1,6 @@
 # SoM Specification
 
-The Sensor module uses a Lattice iCE40UP5K QFN device as its core programmable device. This part is connected to and supported by various other components on the board as shown in the figure below.
+The Sensor module uses a Lattice iCE40UP5K QFN device as its core programmable device. This part is connected to and supported by various other components on the board. Please refer to the [schematic](../SoM/Schematics/SoM) of the SoM for details.
 
 The board has an I2S microphone, Invensense IMU and an installed low power low-cost monochrome camera (PAJ6100U6) from Pixart Inc. In addition, provision is made for a Himax HM01B0 low power camera and also an OV7670 Omnivision flex connector. These options allow for various applications. An IR LED is connected to the Pixart sensor to allow for illumination of the scene with the LED synchronized to the shutter.
 The FPGA is connected to 4Mb of qSPI capable NOR flash for booting as well as storage of other code. The qSPI bus is shared with a 64Mb qSPI SRAM. The SRAM can be used for buffering sensor or intermediate data such as video frames and/or audio streams. Selection between the flash and SRAM is done using dedicated active-low slave select lines.
@@ -72,6 +72,10 @@ On asserting the TBD signal, the 4 wire SPI FPGA programming port is MUX’ed on
 The FPGA CRAM or the flash can be programmed. This requires the MISO and MOSI lines to be interchanged which is done by a mux that does double duty as a level translator.
 
 
-## Mechanical Interface
+## Mechanicals
+The module measures 21.3mm x 31.3mm. A STEP file for the module to assist with mechanical integration is available [here](../resources/som_details/SoM_step.stp). A DXF file is available [here](../resources/som_details/SoM_mechanical_drawing.dxf)
 
 ## Interface API
+The host interface consists of a SPI port capable of running at up to 6MHz (future FPGA code will increase this to >10MHz), an interrupt line and a couple of lines to select various FPGA programming modes.
+
+The detailed specification is under development, requests for specific features are invited at <sales.at.tinyvision.ai>.
