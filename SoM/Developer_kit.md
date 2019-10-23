@@ -19,7 +19,7 @@ Please refer to the [SoM devkit schematics](./Schematics/Dev_kit) for details.
 ### Miscellaneous functions: SW1
 | Switch | Name | Description |
 | :---: | ---: | --- |
-|1,2,3 | I2C Enable | When both these switches are closed, the FTDI chip can be used in I2C mode to communicate with the on-board power monitor as well other devices on the I2C bus both on the SoM as well as on the QWIIC connector. This feature allows for power measurement as well as development of drivers for various I2C devices. |
+|1,2,3 | I2C Enable | When these switches are closed, the FTDI chip can be used in I2C mode to communicate with the on-board power monitor as well other devices on the I2C bus both on the SoM as well as on the QWIIC connector. This feature allows for power measurement as well as development of drivers for various I2C devices. |
 |4 | LDO_EN_N | When closed, the LDO's on the SoM are disabled allowing the user to source these rails from an external power source to test a high efficiency power system. |
 |5 | FT_SEL_N | When opened, the FTDI chip is isolated from the SoM. This can be used when the SoM is hooked up through the PMOD connector for example to an external device.|
 |6 | PIX_RESET_N | Normally open, can be closed to hold the on-board Pixart imager in reset. |
@@ -48,7 +48,7 @@ The SoM has a 4Mb WinBond W25x40CL USON8 package. Please select this if required
 | Functionality | SW1-5   | SW1-8   | PROGRAM | Description |
 | :---:         | ---:    |  ---:   | ---:    |--- |
 | Isolate       | Open    | x       | x       | FTDI isolated from SoM |
-| Host mode     | Close   | x       | Open    | FTDI connected to SoM hsot port |
+| Host mode     | Close   | x       | Open    | FTDI connected to SoM host port |
 | Flash         | Close   | Close   | Close   | FTDI connected to FPGA flash |
 | CRAM/SRAM     | Close   | Open    | Close   | FTDI connected to FPGA CRAM/SRAM for programming|
 
