@@ -52,6 +52,11 @@ The SoM has a 4Mb WinBond W25x40CL USON8 package. Please select this if required
 | Flash         | Close   | Close   | Close   | FTDI connected to FPGA flash |
 | CRAM/SRAM     | Close   | Open    | Close   | FTDI connected to FPGA CRAM/SRAM for programming|
 
+> ***NOTE:***
+> The devkit is still in development and programming the FPGA requires that the PROGRAM jumper
+> must be installed before programming. Once programmed, the PROGRAM jumper must be removed
+> and the FPGA reconfigured by pressing the RESET button.
+
 ## LED's
 | LED Reference | Functionality |
 | :---: | --- |
