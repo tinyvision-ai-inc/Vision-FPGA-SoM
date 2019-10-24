@@ -7,7 +7,11 @@
  * 
  * Simple top level that can blink LED's and source clocks to various devices.
  */
-module top (
+ 
+`define __YOSYS__
+`include "../common/synth_helper.sv"
+
+module blink_led (
 	// Flash
 	output logic mem_sck,
 	output logic [3:0] mem_sio,
@@ -69,7 +73,7 @@ module top (
 	logic clk_48m;
 	logic reset_n;
 
-	HSOSC #( .CLKHF_DIV ("0b00") ) u_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(clk_48m));
+	`UP_HSOSC #( .CLKHF_DIV ("0b00") ) u_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(clk_48m));
 	
 	// Reset
  	ice40_resetn u_reset_n (.clk(clk_48m), .resetn(reset_n));
@@ -98,7 +102,7 @@ module top (
 	// LED is too bright, make this dim enough to not hurt eyes!
 	logic duty_cycle;
 	assign duty_cycle = clk_divider[0] && clk_divider[1];
-	RGB u_led_driver(	
+	`UP_RGB u_led_driver(	
 					.CURREN(1'b1), 
 					.RGBLEDEN(1'b1),
 					.RGB0PWM(clk_divider[25] && clk_divider[24] && duty_cycle), 
