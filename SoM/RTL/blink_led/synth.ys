@@ -1,0 +1,20 @@
+# read design
+read -sv ../common/ice40_resetn.v
+read -sv -I../common blink_led.sv
+
+hierarchy -top blink_led
+
+# the high-level stuff
+proc; fsm; opt; memory; opt
+
+# mapping to internal cell library
+techmap; opt
+
+# mapping flip-flops to mycells.lib
+dfflibmap -liberty mycells.lib
+
+# mapping logic to mycells.lib
+abc -liberty mycells.lib
+
+# cleanup
+clean
