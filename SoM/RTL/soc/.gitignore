@@ -1,0 +1,10 @@
+*.o
+*.bin
+*.elf
+*.map
+*.vvp
+*.vcd
+*.gtkw
+*.d
+*.swp
+*.trace
