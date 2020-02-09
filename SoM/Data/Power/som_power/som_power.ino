@@ -7,6 +7,9 @@
 #include <INA219.h>
 INA219 monitor;
 
+#define OFFSET_POWER 0
+#define OFFSET_VOLTAGE 0
+
 void setup()
 {
   Serial.begin (256000);  
@@ -50,7 +53,7 @@ void getINA() {
   float shuntVoltage = 0;
   float busvoltage = 0;
   float current_mA = 0;
-  float loadvoltage = 0;
+  float loadVoltage = 0;
   float power_mW = 0;
   /*for (int i=0; i<10; i++) {
     shuntvoltage += monitor.shuntVoltage() * 1000-OFFSET_VOLTAGE;
@@ -59,9 +62,9 @@ void getINA() {
   busvoltage = monitor.busVoltageRaw();
   current_mA = monitor.shuntCurrent() * 1000-OFFSET_CURRENT;
   */
-  power_mW = monitor.busPower() * 1000-OFFSET_POWER;
-  //loadvoltage = monitor.busVoltageRaw();
-  //shuntVoltage += monitor.shuntVoltage() * 1000 - OFFSET_VOLTAGE;
+  power_mW = monitor.busPower()*1000;
+  //loadVoltage = monitor.busVoltage();
+  //shuntVoltage = monitor.shuntCurrent()*1000;
 /*
   Serial.print("Bus Voltage:   "); Serial.print(busvoltage); Serial.println(" V");
   Serial.print("Shunt Voltage: "); Serial.print(shuntvoltage); Serial.println(" mV");
@@ -70,8 +73,12 @@ void getINA() {
   Serial.print("Power:         "); Serial.print(power_mW); Serial.println(" mW");
   Serial.println("");
  */
- Serial.println(power_mW);
- //Serial.println(shuntVoltage);
+ Serial.print(power_mW);
+ //Serial.print(", ");
+ //Serial.print(loadVoltage);
+ //Serial.print(", ");
+ //Serial.print(shuntVoltage);
+ Serial.println();
 }
 void loop()
 {
