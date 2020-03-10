@@ -9,7 +9,7 @@ INA219 monitor;
 
 void setup()
 {
-  Serial.begin (256000);  
+  Serial.begin (1000000);  
   delay(100); // Let things stabilize
   Wire.begin (19, 18);   // sda= GPIO_21 /scl= GPIO_22
   Scanner();
@@ -59,7 +59,7 @@ void getINA() {
   busvoltage = monitor.busVoltageRaw();
   current_mA = monitor.shuntCurrent() * 1000-OFFSET_CURRENT;
   */
-  power_mW = monitor.busPower() * 1000-OFFSET_POWER;
+  power_mW = monitor.busPower() * 1000;
   //loadvoltage = monitor.busVoltageRaw();
   //shuntVoltage += monitor.shuntVoltage() * 1000 - OFFSET_VOLTAGE;
 /*
