@@ -10,3 +10,4 @@ local-settings.mk
 *.log
 */build
 *.fst*
+*.vcd
