@@ -1,6 +1,5 @@
 filename = blink_led
 SRCS = 
-SRCS += my_pll.v
 SRCS += ../common/ice40_resetn.v
 SRCS += ../common/spi_slave_core.sv
 SRCS += ../common/wb_spi_slave.sv
