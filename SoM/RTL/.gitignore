@@ -1,5 +1,3 @@
-decode_status_reg
-pll
 *.gtkw
 local-settings.mk
 *.elf
@@ -11,3 +9,8 @@ local-settings.mk
 */build
 *.fst*
 *.vcd
+*.blif
+*.json
+*#
+.#*
+*~
