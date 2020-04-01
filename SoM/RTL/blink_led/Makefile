@@ -1,20 +1,30 @@
 filename = blink_led
-SRCS = $(filename).sv
+SRCS = 
+SRCS += my_pll.v
 SRCS += ../common/ice40_resetn.v
+SRCS += ../common/spi_slave_core.sv
+SRCS += ../common/wb_spi_slave.sv
+#SRCS += ../common/uart.v
+SRCS += $(filename).sv
+
 
 pcf_file = ../common/som.pcf
 
-build:
+synth: $(filename).bin
+
+$(filename).bin: Makefile $(SRCS)
 	yosys -p "synth_ice40 -json $(filename).json -blif $(filename).blif" $(SRCS)
-	arachne-pnr -d up5k -P sg48 -p $(pcf_file) $(filename).blif -o $(filename).asc
-	#nextpnr-ice40 --up5k --json $(filename).json --pcf $(pcf_file) --asc $(filename).asc
+	nextpnr-ice40 --up5k --package sg48 --json $(filename).json --pcf $(pcf_file) --asc $(filename).asc --pcf-allow-unconstrained
 	icepack $(filename).asc $(filename).bin
 
 prog: #for sram
-	iceprog -S $(filename).bin
+	iceprog.exe -S $(filename).bin
 
 prog_flash:
-	iceprog $(filename).bin
+	iceprog.exe $(filename).bin
+
+#my_pll.v: Makefile
+#	icepll -i 48 -o 24 -m -f my_pll.v
 
 clean:
 	rm -rf $(filename).blif $(filename).asc $(filename).bin

@@ -257,12 +257,13 @@ module spi_slave_core
    logic [7:0] dbg_tx_buf_0, dbg_tx_buf_1;
    
    // Bring the tx_valid into the sck domain using a one-shot
-   always @(negedge sck or negedge ~ssn or negedge ~tx_valid) begin
-      if (tx_valid) begin
-         tx_valid_d <= '1;
-      end else if (tx_valid_d || ssn) begin
-         tx_valid_d <= '0;
-      end
+   always @(negedge sck or posedge ssn or posedge tx_valid) begin
+      if (tx_valid) 
+         tx_valid_d <= 1'b1;
+      else if (ssn)
+         tx_valid_d <= 1'b0;
+      else if (tx_valid_d) 
+         tx_valid_d <= 1'b0;
    end
 
 

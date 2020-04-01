@@ -11,9 +11,9 @@ set_io mem_sio[3] 	19
 set_io mem_sio[2] 	18
 
 # Host interface, programmable IO
-set_io host_sck 	44
+set_io host_sck_uart_rx 	44
 set_io host_ssn 	3
-set_io host_mosi 	4
+set_io host_mosi_uart_tx 	4
 set_io host_miso 	48
 set_io host_intr 	47
 set_io gpio[0] 		46
