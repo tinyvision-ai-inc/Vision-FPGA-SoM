@@ -32,20 +32,21 @@
 
  For a license to use on non-tinyVision.ai Inc. hardware, please contact license@tinyvision.ai
 
- * tb_camera_if: A simple testbench for the camera interface
+ * tb_camera_if: A simple testbench for the Wishbone camera interface
  ****************************************************************************/
 
 `default_nettype none
 `timescale 1ns/1ps
 
-`include "camera_if.sv"
+`include "wb_camera_if.sv"
 
 module tb;
 
 
     parameter ROWS = 12;
     parameter COLS = 16;
-        
+    parameter ADR_WIDTH = 10;
+    
     logic              clk=0;
     logic              rst;
 
@@ -55,35 +56,48 @@ module tb;
     logic              frame_vld;
     logic              line_vld;
       
-    // Pixel stream output
-    logic sof;
-    logic eof;
-    logic [7:0]  o_dat;
-    logic o_vld;
-
-    `include "camera_model.sv"
-
+    // Wishbone
+    logic             m_wb_cyc;
+    logic             m_wb_stb;
+    logic [ADR_WIDTH-1:0]    m_wb_adr;
+    logic [31:0]     m_o_wb_dat;
+    logic             m_wb_we;
+    logic              m_wb_ack;
     // Status outputs
     logic [$clog2(COLS):0] num_rows;
     logic [$clog2(ROWS):0] num_cols;
+    logic overrun;
+    
+    // Configuration
+    logic [ADR_WIDTH-1:0]       wr_addr_start;        
+    logic [31:0] timestamp;
+        
+    // Testbench model
+    `include "camera_model.sv"
+
 
     // Camera interface: connect all default ports
-    camera_if #(.COLS(COLS), .ROWS(ROWS)) u_camera_if (.*);
+    wb_camera_if #(.ADR_WIDTH(ADR_WIDTH), .COLS(COLS), .ROWS(ROWS)) u_wb_camera_if (.*);
     
     // Generate clocks
     always #10 clk = ~clk;
     always #50 pixel_clk = ~pixel_clk;
 
+    // Always ack on the Wishbone
+    assign m_wb_ack = m_wb_cyc & m_wb_stb;
+    
     initial begin
-        $display("Starting simulation");
-        $dumpfile("tb_camera_if.vcd");
+        $display("Starting simulation, dumping to tb_wb_camera_if.vcd");
+        $dumpfile("tb_wb_camera_if.vcd");
         $dumpvars(0, tb);
          
         #100;
         rst = 1;
         repeat (5) @(posedge clk);
         rst = 0;
-
+        wr_addr_start= 'h1234;
+        timestamp = 'hdeadbabe;
+        
         repeat (5) @(posedge clk);
         send_incr_frame;
         

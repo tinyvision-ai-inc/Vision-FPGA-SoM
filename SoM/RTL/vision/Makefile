@@ -1,5 +1,7 @@
-filename = tb_camera_if
-SRCS = $(filename).sv
+
+# Invoke simulations with make TOP=wb_camera_if sim 
+TB_SRCS = tb_$(TOP).sv
+SRCS = $(TOP).sv
 
 COMMON = ../common/
 
@@ -8,19 +10,19 @@ pcf_file = ../common/som.pcf
 INCLUDE = -DSIM -g2012 -I$(COMMON) -I./
 
 
-synth: $(filename).bin
+synth: $(TOP).bin
 sim: sim_tb_top
 
-$(filename).bin: Makefile $(SRCS)
-	yosys -p "synth_ice40 -json $(filename).json -blif $(filename).blif" $(SRCS)
-	nextpnr-ice40 --up5k --package sg48 --json $(filename).json --pcf $(pcf_file) --asc $(filename).asc --pcf-allow-unconstrained
-	icepack $(filename).asc $(filename).bin
+$(TOP).bin: Makefile $(SRCS)
+	yosys -p "synth_ice40 -json $(TOP).json -blif $(TOP).blif" $(SRCS)
+	nextpnr-ice40 --up5k --package sg48 --json $(TOP).json --pcf $(pcf_file) --asc $(TOP).asc --pcf-allow-unconstrained
+	icepack $(TOP).asc $(TOP).bin
 
 prog: #for sram
-	iceprog.exe -S $(filename).bin
+	iceprog.exe -S $(TOP).bin
 
-prog_flash:
-	iceprog.exe $(filename).bin
+flash:
+	iceprog.exe $(TOP).bin
 
 my_pll.v: Makefile
 	icepll -i 48 -o 24 -m -f my_pll.v
@@ -30,8 +32,8 @@ sim_tb_top: tb_top
 	vvp -N tb | tee tb.log
 
 tb_top: $(SRCS)
-	iverilog $(INCLUDE) -s tb -o tb $(SRCS) $(shell yosys-config --datdir/ice40/cells_sim.v)
+	iverilog $(INCLUDE) -s tb -o tb $(TB_SRCS) $(shell yosys-config --datdir/ice40/cells_sim.v)
 
 #### Clean
 clean:
-	rm -rf abc.history $(filename).blif $(filename).asc $(filename).bin $(filename).json *.vcd *.log tb my_pll.v
+	rm -rf abc.history *.blif *.asc *.bin *.json *.vcd *.log tb my_pll.v
