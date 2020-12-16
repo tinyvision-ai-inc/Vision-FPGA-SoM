@@ -27,7 +27,6 @@ module top (
 
                   // GPIO
                   output logic [2:0] gpio, // @TODO: make this tri-state in the future
-                  output logic imu_ssn,
                   output logic 	     led_red,
                   output logic 	     led_green,
                   output logic 	     led_blue
@@ -61,7 +60,7 @@ module top (
    assign reset = ~reset_n;
 
    // Slowly vary the servo pulse width
-   logic [19:0] ticker;
+   logic [21:0] ticker;
    logic tick;
    logic up;
    logic [7:0] servo_pos;
@@ -77,18 +76,18 @@ module top (
 
    always @(posedge clk_12m) begin
       if (tick)
-         if (servo_pos == 'hFF)
+         if (servo_pos >= 'hFF-'d25)
             up = '0;
-         else if (servo_pos == '0)
+         else if (servo_pos <= 'd25)
             up = '1;
    
       if (tick)
          if (up)
-            servo_pos <= servo_pos + 'd1;
+            servo_pos <= servo_pos + 'd25;
          else
-            servo_pos <= servo_pos - 'd1;
+            servo_pos <= servo_pos - 'd25;
    end
-   servo #(.CLK_FREQUENCY(15000000) ) u_servo (.clk(clk_12m), .rst(reset), .pos(servo_pos), .pwm(imu_ssn));   
+   servo #(.CLK_FREQUENCY(15000000) ) u_servo (.clk(clk_12m), .rst(reset), .pos(servo_pos), .pwm(gpio[0]));   
    
    //================================================================================
    // LED ports have to have a special IO driver: for some reason, the SB_RGBA_DRV
@@ -97,8 +96,8 @@ module top (
    //================================================================================
    
    SB_RGBA_DRV u_led_driver(
-                            .CURREN(1'b0), 
-                            .RGBLEDEN(1'b0),
+                            .CURREN(1'b1), 
+                            .RGBLEDEN(1'b1),
                             .RGB0PWM(1'b0), 
                             .RGB1PWM(1'b0), 
                             .RGB2PWM(1'b0), 

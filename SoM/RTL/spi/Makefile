@@ -5,7 +5,8 @@ SRCS = $(TOP).sv
 
 COMMON = ../common/
 
-pcf_file = ../common/som.pcf
+#pcf_file = ../common/som.pcf
+pcf_file = ./upduino.pcf
 
 INCLUDE = -DSIM -g2012 -I$(COMMON) -I./
 

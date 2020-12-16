@@ -7,7 +7,7 @@ module tb;
     parameter logic debug = 0; 
   
     logic                 clk = 1'b0;                  // To dut of wb_spi_slave.v
-    logic               rst;                  // To dut of wb_spi_slave.v
+    logic               rst, rst_dut;                  // To dut of wb_spi_slave.v
     
     logic               i_wb_ack;               // To dut of wb_spi_slave.v
     logic [31:0]         i_wb_dat;               // To dut of wb_spi_slave.v
@@ -33,9 +33,12 @@ module tb;
 
     `include "tb_spi_helpers.sv"
     
+    assign #100 rst_dut = reset_out | rst;
+    
     wb_spi_slave
         dut
         (
+            .rst( rst_dut ),
             .sck                               (spi_clk),
             .ssn                               (spi_ss),
             .mosi                              (spi_mosi),
@@ -64,7 +67,9 @@ module tb;
         
     end
 
-
+    always @(posedge reset_out)
+        $display("%t::: Got a reset!", $time);
+        
     // Stimulus
     always #10 clk = ~clk;
     logic [23:0] exp_addr;
@@ -133,6 +138,11 @@ module tb;
             spi_id = spi_id + 'd1;
             spi_status = spi_status - 'd1;
         end
+        
+        // Reset the chip
+        $display("Expect a reset now");
+        spiSendReset();
+        
         /*
         spiGetID(temp1, temp2);
         `expect_h("SPI ID: ", spi_id, temp1);

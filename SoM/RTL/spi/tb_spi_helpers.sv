@@ -193,7 +193,7 @@ task spiSendReset;
     spiTxStart();
     spiSendByte(SPI_ARM_RESET);
     spiTxStop();
-    #10;
+    #100;
     spiTxStart();
     spiSendByte(SPI_FIRE_RESET);
     spiTxStop();

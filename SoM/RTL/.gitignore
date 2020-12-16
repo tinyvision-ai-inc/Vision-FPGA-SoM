@@ -13,4 +13,8 @@ local-settings.mk
 *.json
 *#
 .#*
+*.history
+*.asc
+*.bin
+tb
 *~

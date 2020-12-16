@@ -34,19 +34,19 @@ module spi_slave (
    
     // SPI protocol
     parameter
-        SPI_READ_ID             = 8'h90,
+    //SPI_READ_ID             = 8'h90,
         SPI_READ_STATUS         = 8'h05,
-        SPI_WRITE_STATUS        = 8'h01,
+        //SPI_WRITE_STATUS        = 8'h01,
         SPI_READ                = 8'h0B,
         SPI_WRITE               = 8'h02,
-        SPI_POWERDOWN           = 8'hB9,
-        SPI_EXIT_POWERDOWN      = 8'hAB,
+        //SPI_POWERDOWN           = 8'hB9,
+        //SPI_EXIT_POWERDOWN      = 8'hAB,
         SPI_ARM_RESET           = 8'h66,
         SPI_FIRE_RESET          = 8'h99
     ;
     
     // SPI serializer & deserializer and clock domain crossing
-    logic rx_vld, rx_vld_1d, tx_vld;
+    logic rx_vld, rx_vld_1d, tx_vld, tx_rdy;
     logic [7:0] rx_byte, tx_byte;
     
     spi_shifter
@@ -65,6 +65,7 @@ module spi_slave (
 
             .tx_dat(tx_byte),
             .tx_vld(tx_vld),
+            .tx_rdy(tx_rdy),
 
             .tx_overrun(tx_overrun),
             .busy(spi_busy),
@@ -91,19 +92,24 @@ module spi_slave (
         
     logic [7:0] command;
     logic [2:0] rx_cnt;
-
+    logic reset_armed;
+    
     assign tx_ack = '1;
     
     // Next state for SM
     always @(posedge clk) begin
-        if (rst | ssn) begin
+        if (rst) begin
             sm <= S_IDLE;
             o_we <= '0;
             o_adr <= '0;
+            reset_armed <= '0;
+            reset_out <= '0;
         end else begin
+            
+            // Default values:
             o_vld <= '0;
             tx_vld <= '0;
-            
+
             case (sm)
                 S_IDLE: if (spi_start) begin
                         sm <= S_CMD;
@@ -117,12 +123,26 @@ module spi_slave (
                         command <= rx_byte;
             
                         case (rx_byte)
-                            SPI_READ, SPI_WRITE: sm <= S_ADR_0;
+                            SPI_READ, SPI_WRITE: begin 
+                                sm <= S_ADR_0;
+                                reset_armed <= '0;
+                            end
+                            
                             SPI_READ_STATUS: begin
                                 sm <= S_STATUS;
-                                tx_vld <= '1;
+                                tx_vld <= tx_rdy;
                                 tx_byte <= spi_status;
+                                reset_armed <= '0;
                             end
+                            
+                            SPI_ARM_RESET: begin
+                                reset_armed <= '1;
+                            end
+                            
+                            SPI_FIRE_RESET: begin
+                                reset_out <= reset_armed;
+                            end
+                            
                             default: sm <= S_IDLE;
                         endcase
                     end
@@ -130,7 +150,7 @@ module spi_slave (
 
                 S_ADR_0: if (rx_vld) begin
                         sm <= S_ADR_1;
-                        o_adr[24:16] <= rx_byte;
+                        o_adr[23:16] <= rx_byte;
                     end
                 S_ADR_1: if (rx_vld) begin
                         sm <= S_ADR_2;
@@ -209,6 +229,16 @@ module spi_slave (
                 
             endcase
         end
+
+        // Higher priority for ssn:
+        if (ssn) begin
+            sm <= S_IDLE;
+            o_we <= '0;
+            o_adr <= '0;
+            o_vld <= '0;
+            tx_vld <= '0;
+        end
+
     end
 
     

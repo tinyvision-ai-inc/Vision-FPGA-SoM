@@ -18,7 +18,7 @@ module tb;
         logic rx_vld;
 
         // Tx data
-        logic tx_vld;
+        logic tx_vld, tx_rdy;
         logic [7:0] tx_dat;
 
         // Status

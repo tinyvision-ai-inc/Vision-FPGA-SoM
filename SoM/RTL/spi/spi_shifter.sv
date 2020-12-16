@@ -23,6 +23,7 @@ module spi_shifter (
 
         // Tx data
         input logic tx_vld,
+        output logic tx_rdy,
         input logic [7:0] tx_dat,
 
         // Status
@@ -39,7 +40,7 @@ module spi_shifter (
     logic [1:0] tx_demet;
     logic tx_ack;
     
-    always @(posedge sck or posedge ssn) begin
+    always @(negedge sck or posedge ssn) begin
         if (ssn) begin
             tx_buf_sel <= '0;
             tx_bit_cnt <= '0;
@@ -66,6 +67,8 @@ module spi_shifter (
             tx_buf[tx_buf_sel] <= {tx_buf[tx_buf_sel][6:0], 1'b0};
         end
     end
+    
+    assign tx_rdy = ~tx_pend;
     
     assign miso = tx_buf[tx_buf_sel][7];
 
