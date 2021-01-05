@@ -1,0 +1,30 @@
+[submodule "SoM/RTL/async_fifo"]
+	path = SoM/RTL/async_fifo
+	url = https://github.com/olofk/async_fifo.git
+[submodule "SoM/RTL/fifo"]
+	path = SoM/RTL/fifo
+	url = https://github.com/olofk/fifo.git
+[submodule "SoM/RTL/cdc_utils"]
+	path = SoM/RTL/cdc_utils
+	url = https://github.com/fusesoc/cdc_utils.git
+[submodule "SoM/RTL/stream_utils"]
+	path = SoM/RTL/stream_utils
+	url = https://github.com/olofk/stream_utils.git
+[submodule "SoM/RTL/i2c"]
+	path = SoM/RTL/i2c
+	url = https://github.com/olofk/i2c.git
+[submodule "SoM/RTL/vlog_tb_utils"]
+	path = SoM/RTL/vlog_tb_utils
+	url = https://github.com/fusesoc/vlog_tb_utils.git
+[submodule "SoM/RTL/verilog-arbiter"]
+	path = SoM/RTL/verilog-arbiter
+	url = https://github.com/bmartini/verilog-arbiter.git
+[submodule "SoM/RTL/wb_common"]
+	path = SoM/RTL/wb_common
+	url = https://github.com/fusesoc/wb_common.git
+[submodule "SoM/RTL/wb_bfm"]
+	path = SoM/RTL/wb_bfm
+	url = https://github.com/olofk/wb_bfm.git
+[submodule "SoM/RTL/wb_intercon"]
+	path = SoM/RTL/wb_intercon
+	url = https://github.com/olofk/wb_intercon.git
