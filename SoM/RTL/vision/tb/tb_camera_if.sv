@@ -35,12 +35,10 @@
  * tb_camera_if: A simple testbench for the camera interface
  ****************************************************************************/
 
-`default_nettype none
+//`default_nettype none
 `timescale 1ns/1ps
 
-`include "camera_if.sv"
-
-module tb;
+module tb_camera_if;
 
 
     parameter ROWS = 12;
@@ -50,16 +48,16 @@ module tb;
     logic              rst;
 
     // Camera Interface
-    logic              pixel_clk=0;
-    logic [7:0]        pixel_dat;
-    logic              frame_vld;
-    logic              line_vld;
-      
+    logic       pixel_clk = 0;
+    logic [7:0] pixel_dat    ;
+    logic       frame_vld    ;
+    logic       line_vld     ;
+
     // Pixel stream output
-    logic sof;
-    logic eof;
-    logic [7:0]  o_dat;
-    logic o_vld;
+    logic       sof  ;
+    logic       eof  ;
+    logic [7:0] o_dat;
+    logic       o_vld;
 
     `include "camera_model.sv"
 
@@ -77,7 +75,7 @@ module tb;
     initial begin
         $display("Starting simulation");
         $dumpfile("tb_camera_if.vcd");
-        $dumpvars(0, tb);
+        $dumpvars(0, tb_camera_if);
          
         #100;
         rst = 1;

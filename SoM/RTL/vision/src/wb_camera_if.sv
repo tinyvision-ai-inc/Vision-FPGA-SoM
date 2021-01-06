@@ -39,45 +39,33 @@
  * Converts the incoming camera data stream to 32 bit words and creates RAM accesses
  */
  
-`include "camera_if.sv"
- 
-module wb_camera_if 
-        #(
-        parameter ADR_WIDTH = 15,
-        parameter ROWS = 120,
-        parameter COLS = 160
-        )
-        (
-        input logic 		     clk,
-        input logic 		     rst,
-
-        // Camera Interface
-        input logic 		     pixel_clk,
-        input logic [7:0]	     pixel_dat,
-        input logic 		     frame_vld,
-        input logic 		     line_vld,
-      
-        // Configuration
-        input logic [ADR_WIDTH-1:0]       wr_addr_start, //Starting address in memory
-        input logic [31:0] timestamp, // Timestamp to write as the first address
-        
-        // Status
-        output logic [$clog2(COLS):0] num_cols,
-        output logic [$clog2(ROWS):0] num_rows,
-        output logic overrun,
-        
-        // Master WB
-        output logic 		     m_wb_cyc,
-        output logic 		     m_wb_stb,
-
-        output logic [ADR_WIDTH-1:0]    m_wb_adr,
-        output logic [31:0]     m_o_wb_dat,
-        output logic 		     m_wb_we,
-    
-        input logic 		     m_wb_ack
-        
-
-        );
+module wb_camera_if #(
+    parameter ADR_WIDTH = 15 ,
+    parameter ROWS      = 120,
+    parameter COLS      = 160
+) (
+    input  logic                  clk          ,
+    input  logic                  rst          ,
+    // Camera Interface
+    input  logic                  pixel_clk    ,
+    input  logic [           7:0] pixel_dat    ,
+    input  logic                  frame_vld    ,
+    input  logic                  line_vld     ,
+    // Configuration
+    input  logic [ ADR_WIDTH-1:0] wr_addr_start, //Starting address in memory
+    input  logic [          31:0] timestamp    , // Timestamp to write as the first address
+    // Status
+    output logic [$clog2(COLS):0] num_cols     ,
+    output logic [$clog2(ROWS):0] num_rows     ,
+    output logic                  overrun      ,
+    // Master WB
+    output logic                  m_wb_cyc     ,
+    output logic                  m_wb_stb     ,
+    output logic [ ADR_WIDTH-1:0] m_wb_adr     ,
+    output logic [          31:0] m_o_wb_dat   ,
+    output logic                  m_wb_we      ,
+    input  logic                  m_wb_ack
+);
 
 
     logic                            wb_adr_incr;
