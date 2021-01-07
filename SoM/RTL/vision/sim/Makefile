@@ -20,7 +20,7 @@ VLOG_TB_UTILS = $(LIBS)/vlog_tb_utils
 WB_COMMON = $(LIBS)/wb_common
 COMMON = $(LIBS)/common
 
-SRCH_PATH = -y $(TB) -y $(RTL) -y $(WB_COMMON) -y $(ASYNC_FIFO) -y $(FIFO) -y $(I2C) -y $(STREAM_UTILS) -y $(STREAM_UTILS_TB) -y $(WB_STREAMER) -y $(WB_BFM) -y $(WB_INTERCON) -y $(VLOG_TB_UTILS)
+SRCH_PATH = -y $(TB) -y $(RTL) -y $(COMMON) -y $(WB_COMMON) -y $(ASYNC_FIFO) -y $(FIFO) -y $(I2C) -y $(STREAM_UTILS) -y $(STREAM_UTILS_TB) -y $(WB_STREAMER) -y $(WB_BFM) -y $(WB_INTERCON) -y $(VLOG_TB_UTILS)
 
 VLOG_OPTS = -lint -pedanticerrors -fsmverbose w +libext+.v +libext+.sv $(SRCH_PATH) +incdir+$(WB_COMMON) +incdir+$(COMMON) +incdir+$(TB) +incdir+$(RTL)
 VSIM_OPTS = -warning vsim-3009 -t ps
