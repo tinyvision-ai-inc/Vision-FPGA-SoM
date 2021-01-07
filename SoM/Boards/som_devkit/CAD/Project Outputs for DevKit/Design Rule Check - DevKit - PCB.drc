@@ -1,0 +1,48 @@
+Protel Design System Design Rule Check
+PCB File : E:\@@@@Darial\@@@Venkat\VisionSOM\som_devkit\CAD\DevKit - PCB.PcbDoc
+Date     : 10/9/2020
+Time     : 5:22:07 PM
+
+Processing Rule : Clearance Constraint (Gap=5.906mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: Yes), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=5.906mil) (Max=157.48mil) (Preferred=5.906mil) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=248.031mil) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Component Clearance Constraint ( Horizontal Gap = 0mil, Vertical Gap = 0mil ) (InComponent('Y1')or InComponent('R20')or InComponent('R24')or InComponent('C1')),(All) 
+Rule Violations :0
+
+Processing Rule : Component Clearance Constraint ( Horizontal Gap = 8.5mil, Vertical Gap = 8.5mil ) (All),(All) 
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+
+Violations Detected : 0
+Waived Violations : 0
+Time Elapsed        : 00:00:02

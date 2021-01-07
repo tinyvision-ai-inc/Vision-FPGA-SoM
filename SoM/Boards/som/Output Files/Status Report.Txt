@@ -1,0 +1,38 @@
+Output: Gerber X2 Files
+Type  : GerberX2
+From  : PCB Document [TINYMODULE-V3.PcbDoc]
+   Generated File[TINYMODULE-V3_Copper_Signal_Top.gbr]
+   Generated File[TINYMODULE-V3_Copper_Signal_1.gbr]
+   Generated File[TINYMODULE-V3_Copper_Signal_2.gbr]
+   Generated File[TINYMODULE-V3_Copper_Signal_3.gbr]
+   Generated File[TINYMODULE-V3_Copper_Signal_4.gbr]
+   Generated File[TINYMODULE-V3_Copper_Signal_Bot.gbr]
+   Generated File[TINYMODULE-V3_Pads_Bot.gbr]
+   Generated File[TINYMODULE-V3_Pads_Top.gbr]
+   Generated File[TINYMODULE-V3_Paste_Bot.gbr]
+   Generated File[TINYMODULE-V3_Legend_Bot.gbr]
+   Generated File[TINYMODULE-V3_Soldermask_Bot.gbr]
+   Generated File[TINYMODULE-V3_Legend_Top.gbr]
+   Generated File[TINYMODULE-V3_Paste_Top.gbr]
+   Generated File[TINYMODULE-V3_Soldermask_Top.gbr]
+   Generated File[TINYMODULE-V3_Keep-out.gbr]
+   Generated File[TINYMODULE-V3_Mechanical_17.gbr]
+   Generated File[TINYMODULE-V3_Mechanical_10.gbr]
+   Generated File[TINYMODULE-V3_Mechanical_16.gbr]
+   Generated File[TINYMODULE-V3_Mechanical_3.gbr]
+   Generated File[TINYMODULE-V3_Mechanical_15.gbr]
+   Generated File[TINYMODULE-V3_Mechanical_6.gbr]
+   Generated File[TINYMODULE-V3_Profile.gbr]
+   Generated File[TINYMODULE-V3_NPTH_Drill.gbr]
+   Generated File[TINYMODULE-V3_PTH_Drill.gbr]
+   Generated File[TINYMODULE-V3_Drawing_1.gbr]
+   Generated File[TINYMODULE-V3_Drillmap_1.gbr]
+   Generated File[TINYMODULE-V3.RUL]
+   Generated File[TINYMODULE-V3.EXTREP]
+   Generated File[TINYMODULE-V3.REP]
+
+
+Files Generated   : 29
+Documents Printed : 0
+
+Finished Output Generation At 9:04:52 AM On 10/2/2020

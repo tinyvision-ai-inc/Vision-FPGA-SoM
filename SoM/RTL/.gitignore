@@ -16,5 +16,4 @@ local-settings.mk
 *.history
 *.asc
 *.bin
-tb
 *~

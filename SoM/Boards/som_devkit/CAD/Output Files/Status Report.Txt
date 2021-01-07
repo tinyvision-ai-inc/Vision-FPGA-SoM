@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 4:49:14 PM On 10/9/2020
+
+Output: BOM
+Type  : BOM
+From  : Project [DevKit.PrjPcb]
+   Generated File[BOM-DevKit.xlsx]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 4:49:22 PM On 10/9/2020
