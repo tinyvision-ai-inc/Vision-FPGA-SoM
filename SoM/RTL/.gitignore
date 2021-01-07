@@ -17,3 +17,10 @@ local-settings.mk
 *.asc
 *.bin
 *~
+*.wlf
+*.qdb
+*.qpg
+*.qtl
+*_vmake
+*.xml
+*.cfg
