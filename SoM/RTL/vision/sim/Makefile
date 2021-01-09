@@ -9,8 +9,9 @@ TB = ../tb
 SIM_SRCS = $(TB)/tb_$(TOP).sv
 
 ASYNC_FIFO = $(LIBS)/async_fifo/src
+CDC_UTILS = $(LIBS)/cdc_utils/rtl/verilog
 FIFO = $(LIBS)/fifo/rtl/verilog
-I2C = $(LIBS)/i2c/rtl
+I2C = $(LIBS)/i2c/bench/verilog
 STREAM_UTILS = $(LIBS)/stream_utils/rtl/verilog
 STREAM_UTILS_TB = $(LIBS)/stream_utils/bench
 WB_BFM = $(LIBS)/wb_bfm/
@@ -20,7 +21,7 @@ VLOG_TB_UTILS = $(LIBS)/vlog_tb_utils
 WB_COMMON = $(LIBS)/wb_common
 COMMON = $(LIBS)/common
 
-SRCH_PATH = -y $(TB) -y $(RTL) -y $(COMMON) -y $(WB_COMMON) -y $(ASYNC_FIFO) -y $(FIFO) -y $(I2C) -y $(STREAM_UTILS) -y $(STREAM_UTILS_TB) -y $(WB_STREAMER) -y $(WB_BFM) -y $(WB_INTERCON) -y $(VLOG_TB_UTILS)
+SRCH_PATH = -y $(TB) -y $(RTL) -y $(COMMON) -y $(CDC_UTILS) -y $(WB_COMMON) -y $(ASYNC_FIFO) -y $(FIFO) -y $(I2C) -y $(STREAM_UTILS) -y $(STREAM_UTILS_TB) -y $(WB_STREAMER) -y $(WB_BFM) -y $(WB_INTERCON) -y $(VLOG_TB_UTILS)
 
 VLOG_OPTS = -lint -pedanticerrors -fsmverbose w +libext+.v +libext+.sv $(SRCH_PATH) +incdir+$(WB_COMMON) +incdir+$(COMMON) +incdir+$(TB) +incdir+$(RTL)
 VSIM_OPTS = -warning vsim-3009 -t ps

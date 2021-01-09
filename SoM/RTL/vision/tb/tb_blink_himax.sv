@@ -45,8 +45,8 @@ module tb_blink_himax;
     logic       uart_rx   ;
     logic       uart_tx   ;
     logic [2:0] gpio      ;
-    wire        i2c_scl   ;
-    wire        i2c_sda   ;
+    tri1        i2c_scl   ;
+    tri1        i2c_sda   ;
     logic       sensor_clk;
     logic       px_clk = '0    ;
     logic       px_fv     ;
@@ -74,6 +74,9 @@ module tb_blink_himax;
         .led_blue  (led_blue  )
     );
 
+    // I2C slave
+    i2c_slave_model #(.I2C_ADR(7'b010_0100) ) i_i2c_slave_model (.scl(i2c_scl), .sda(i2c_sda));
+
     // Camera source
     camera_model #(.FOUR_BITS("TRUE"), .WIDTH(8), .HOR_BLANK(4), .MAX_ROWS(NUM_ROWS), .MAX_COLS(NUM_COLS)) camera (
         .clk  (px_clk),
@@ -92,7 +95,7 @@ module tb_blink_himax;
         for (int i=0; i<NUM_COLS*NUM_ROWS; i++)
             stimulus[i] = i;
 
-        wait (dut.rst_n);
+        wait (dut.init_done);
         repeat (10) @(posedge px_clk);
 
         camera.write_frame(NUM_COLS, NUM_ROWS, stimulus);
