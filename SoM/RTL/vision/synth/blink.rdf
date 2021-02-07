@@ -27,6 +27,9 @@
         <Source name="../../common/sensorModule.pdc" type="Physical Constraints File" type_short="PDC">
             <Options/>
         </Source>
+        <Source name="../src/ram256x16_himax.mem" type="Unknown Type" type_short="Unknown">
+            <Options/>
+        </Source>
         <Source name="source/impl_1.xcf" type="Programming Project File" type_short="Programming">
             <Options/>
         </Source>
