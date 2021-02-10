@@ -43,7 +43,7 @@ module ice40_spram_128kx8 (
     input  logic [16:0] addr   ,
     input  logic        wr_en  ,
     input  logic [ 7:0] wr_data,
-    output logic [ 7:0] rd_data,
+    output logic [ 7:0] rd_data
 );
 
 
@@ -83,14 +83,14 @@ module ice40_spram_128kx8 (
 
     // Mux the read data
     assign bank_dout =
-        (rd_addr[16:15] == 2'b00) ? dout[0] :
-        (rd_addr[16:15] == 2'b01) ? dout[1] :
-        (rd_addr[16:15] == 2'b10) ? dout[2] :
+        (addr[16:15] == 2'b00) ? dout[0] :
+        (addr[16:15] == 2'b01) ? dout[1] :
+        (addr[16:15] == 2'b10) ? dout[2] :
         dout[3];
 
     // Demux the data
     always_ff @(posedge clk)
-        rd_data <= rd_addr[0] ? bank_dout[15:8] : bank_dout[7:0];
+        rd_data <= addr[0] ? bank_dout[15:8] : bank_dout[7:0];
 
 endmodule
 
