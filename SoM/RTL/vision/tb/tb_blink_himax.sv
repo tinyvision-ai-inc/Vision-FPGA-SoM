@@ -41,26 +41,29 @@ module tb_blink_himax;
 
     parameter NUM_ROWS = 30;
     parameter NUM_COLS = 40;
+    parameter UART_PERIOD = 6;
 
-    logic       uart_rx   ;
-    logic       uart_tx   ;
-    logic [2:0] gpio      ;
-    tri1        i2c_scl   ;
-    tri1        i2c_sda   ;
-    logic       sensor_clk;
-    logic       px_clk = '0    ;
-    logic       px_fv     ;
-    logic       px_lv     ;
-    logic [7:0] pxd       ;
-    logic       sensor_led;
-    logic       led_red   ;
-    logic       led_green ;
-    logic       led_blue  ;
+    logic       uart_rx        ;
+    logic       uart_tx        ;
+    logic [2:0] gpio           ;
+    logic       host_intr      ;
+    tri1        i2c_scl        ;
+    tri1        i2c_sda        ;
+    logic       sensor_clk     ;
+    logic       px_clk     = '0;
+    logic       px_fv          ;
+    logic       px_lv          ;
+    logic [7:0] pxd            ;
+    logic       sensor_led     ;
+    logic       led_red        ;
+    logic       led_green      ;
+    logic       led_blue       ;
 
-    blink_himax dut (
+    blink_himax #(.UART_PERIOD(UART_PERIOD)) dut (
         .uart_rx   (uart_rx   ),
         .uart_tx   (uart_tx   ),
         .gpio      (gpio      ),
+        .host_intr (host_intr),
         .i2c_scl   (i2c_scl   ),
         .i2c_sda   (i2c_sda   ),
         .sensor_clk(sensor_clk),
@@ -85,24 +88,62 @@ module tb_blink_himax;
         .hsync(px_lv )
     );
 
+    // UART stimulus
+    logic [7:0] uart_din, uart_dout;
+    logic uart_din_valid, uart_dout_valid;
+    logic uart_empty;
+    lsc_uart #(.PERIOD    (UART_PERIOD)) i_lsc_uart (
+        .ref_clk(dut.clk        ),
+        .clk    (dut.clk        ),
+        .resetn (~dut.rst       ),
+        .i_din  (uart_din       ),
+        .i_valid(uart_din_valid ),
+        .o_empty(               ),
+        .o_dout (uart_dout      ),
+        .o_valid(uart_dout_valid),
+        .i_rxd  (uart_tx        ),
+        .o_txd  (uart_rx        )
+    );
+
+
+    always @(posedge uart_dout_valid) begin
+        $display("UART_RX_DATA: 0x%x", uart_dout);
+    end
+
     // Camera clock
     always #50000 px_clk = ~px_clk;
 
     logic [7:0] stimulus[0:NUM_COLS*NUM_ROWS-1];
     initial begin
 
+        // Poke the timer in the DUT so it counts faster
+        dut.timer = 'hffff0;
+
         // Generate the stimulus
         for (int i=0; i<NUM_COLS*NUM_ROWS; i++)
             stimulus[i] = i;
 
-        wait (dut.init_done);
+        wait (dut.s_state == dut.S_WAIT_UART);
+
+        uart_din = '1;
+        uart_din_valid = '1;
+        @(posedge dut.clk);
+        uart_din_valid = '0;
+
+        wait(dut.load_fifo);
+
         repeat (10) @(posedge px_clk);
 
         camera.write_frame(NUM_COLS, NUM_ROWS, stimulus);
 
         $display("Done sending frame...");
 
-        #1000; $finish;       
+        wait (~dut.pixel_valid);
+
+        wait (~dut.uart_empty);
+
+        #10000000; 
+        $finish;       
 
     end
 endmodule
