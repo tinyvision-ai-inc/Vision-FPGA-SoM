@@ -39,9 +39,10 @@
 
 module tb_blink_himax;
 
-    parameter NUM_ROWS = 30;
-    parameter NUM_COLS = 40;
-    parameter UART_PERIOD = 6;
+    parameter NUM_ROWS       = 30;
+    parameter NUM_COLS       = 40;
+    parameter UART_PERIOD    = 6 ; // Go fast!
+    parameter NUM_HIMAX_CMDS = 1 ; // Bypass all init stuff
 
     logic       uart_rx        ;
     logic       uart_tx        ;
@@ -59,7 +60,7 @@ module tb_blink_himax;
     logic       led_green      ;
     logic       led_blue       ;
 
-    blink_himax #(.UART_PERIOD(UART_PERIOD)) dut (
+    blink_himax #(.UART_PERIOD(UART_PERIOD), .NUM_HIMAX_CMDS(NUM_HIMAX_CMDS)) dut (
         .uart_rx   (uart_rx   ),
         .uart_tx   (uart_tx   ),
         .gpio      (gpio      ),
@@ -107,14 +108,30 @@ module tb_blink_himax;
 
 
     always @(posedge uart_dout_valid) begin
-        $display("UART_RX_DATA: 0x%x", uart_dout);
+        $display("%t:::UART_RX_DATA: 0x%x", $time, uart_dout);
     end
 
+    // UART checker: should receive incrementing pixels, else an error somewhere
+    logic [7:0] uart_dout_d;
+
+    always_ff @(posedge dut.clk) begin
+        if(uart_dout_valid) begin
+            if (uart_dout_d + 'd1 != uart_dout)
+                $error("%t::: UART pixels out of sequence! Expected: 0x%x, got: 0x%x", $time, uart_dout_d, uart_dout);
+
+            uart_dout_d <= uart_dout;
+
+        end
+    end
+
+
     // Camera clock
-    always #50000 px_clk = ~px_clk;
+    always #100000 px_clk = ~px_clk;
 
     logic [7:0] stimulus[0:NUM_COLS*NUM_ROWS-1];
     initial begin
+
+        wait(~dut.rst)
 
         // Poke the timer in the DUT so it counts faster
         dut.timer = 'hffff0;
@@ -123,26 +140,25 @@ module tb_blink_himax;
         for (int i=0; i<NUM_COLS*NUM_ROWS; i++)
             stimulus[i] = i;
 
-        wait (dut.s_state == dut.S_WAIT_UART);
+        repeat (2) begin // Do 2 iterations to check for errors
+            wait (dut.s_state == dut.S_WAIT_UART);
 
-        uart_din = '1;
-        uart_din_valid = '1;
-        @(posedge dut.clk);
-        uart_din_valid = '0;
+            uart_din = '1;
+            uart_din_valid = '1;
+            @(posedge dut.clk);
+            uart_din_valid = '0;
 
-        wait(dut.load_fifo);
+            wait(dut.s_state == dut.S_WAIT_FRAME);
 
-        repeat (10) @(posedge px_clk);
+            repeat (100) @(posedge px_clk);
 
-        camera.write_frame(NUM_COLS, NUM_ROWS, stimulus);
+            camera.write_frame(NUM_COLS, NUM_ROWS, stimulus);
 
-        $display("Done sending frame...");
+            $display("Done sending frame...");
 
-        wait (~dut.pixel_valid);
-
-        wait (~dut.uart_empty);
-
-        #10000000; 
+            wait (dut.s_state == dut.S_WAIT_UART);
+        end
+        #10000000;
         $finish;       
 
     end

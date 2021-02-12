@@ -35,27 +35,36 @@
 
 /**
  * Module:: 128KB byte wide memory using 4x SPRAM blocks.
+ * TBD: Add in power controls to put the RAM to sleep when it isnt active
  */
 
 module ice40_spram_128kx8 (
-    input  logic        clk    ,
-    input  logic        rst    ,
-    input  logic [16:0] addr   ,
-    input  logic        wr_en  ,
-    input  logic [ 7:0] wr_data,
-    output logic [ 7:0] rd_data
+    input  wire       clk    ,
+    input  wire        rst    ,
+    input  wire        cs     ,
+    input  wire [16:0] addr   ,
+    input  wire        wr_en  ,
+    input  wire [ 7:0] wr_data,
+    output wire [ 7:0] rd_data
 );
 
 
     // SRAM signals
     logic [ 3:0] mask          ;
     logic [ 3:0] we            ;
+    logic [ 3:0] ram_cs        ;
     logic [15:0] dout     [0:3];
     logic [15:0] bank_dout     ;
+    logic addr0_d;
 
     // The RAM bank consists of four 16k x 16 RAM's. The interface is 8 bits so we need to add local muxes
     // to deal with this.
     
+    // Store the byte select to align with data coming out of the RAM on a read
+    always_ff @(posedge clk)
+        if (cs & ~wr_en)
+            addr0_d <= addr[0];
+
     // RAM's support nibble access, want only byte level access
     assign mask = addr[0] ? 4'b1100 : 4'b0011;
 
@@ -63,13 +72,14 @@ module ice40_spram_128kx8 (
         for (genvar i=0; i<4; i++) begin
 
             // Generate the write enable
-            assign we[i] = wr_en && (addr[16:15] == i);
+            assign we[i]     = wr_en && (addr[16:15] == i);
+            assign ram_cs[i] = cs && (addr[16:15] == i);
 
             // Instantiate the 4 banks of SPRAM
             SP256K i_spram16k_16 (
-                .CS      (1'b1              ),
                 .CK      (clk               ),
-                .AD      (addr[16:1]        ),
+                .CS      (ram_cs[i]         ),
+                .AD      (addr[14:1]        ),
                 .DI      ({wr_data, wr_data}),
                 .MASKWE  (mask              ),
                 .WE      (we[i]             ),
@@ -89,8 +99,7 @@ module ice40_spram_128kx8 (
         dout[3];
 
     // Demux the data
-    always_ff @(posedge clk)
-        rd_data <= addr[0] ? bank_dout[15:8] : bank_dout[7:0];
+    assign rd_data = addr0_d ? bank_dout[15:8] : bank_dout[7:0];
 
 endmodule
 

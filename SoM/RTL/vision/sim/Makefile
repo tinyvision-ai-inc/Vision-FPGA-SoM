@@ -20,9 +20,11 @@ WB_STREAMER = $(LIBS)/wb_streamer/rtl/verilog
 VLOG_TB_UTILS = $(LIBS)/vlog_tb_utils
 WB_COMMON = $(LIBS)/wb_common
 COMMON = $(LIBS)/common
+UART = $(LIBS)/uart
+MISC = $(LIBS)/misc
 DPRAM = ../synth/dpram512x8/rtl
 
-SRCH_PATH = -y $(TB) -y $(RTL) -y $(COMMON) -y $(CDC_UTILS) -y $(WB_COMMON) -y $(ASYNC_FIFO) -y $(FIFO) -y $(I2C) -y $(STREAM_UTILS) -y $(STREAM_UTILS_TB) -y $(WB_STREAMER) -y $(WB_BFM) -y $(WB_INTERCON) -y $(VLOG_TB_UTILS) -y $(DPRAM)
+SRCH_PATH = -y $(TB) -y $(RTL) -y $(COMMON) -y $(CDC_UTILS) -y $(WB_COMMON) -y $(ASYNC_FIFO) -y $(FIFO) -y $(I2C) -y $(STREAM_UTILS) -y $(STREAM_UTILS_TB) -y $(WB_STREAMER) -y $(WB_BFM) -y $(WB_INTERCON) -y $(VLOG_TB_UTILS) -y $(UART) -y $(MISC) -y $(DPRAM)
 
 VLOG_OPTS = -lint -pedanticerrors -fsmverbose w +libext+.v +libext+.sv $(SRCH_PATH) +incdir+$(WB_COMMON) +incdir+$(COMMON) +incdir+$(TB) +incdir+$(RTL)
 VSIM_OPTS = -warning vsim-3009 -t ps
