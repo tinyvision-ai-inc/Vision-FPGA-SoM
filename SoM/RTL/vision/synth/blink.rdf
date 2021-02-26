@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RadiantProject version="4.1" title="blink" device="iCE40UP5K-SG48I" performance_grade="High-Performance_1.2V" default_implementation="impl_1">
+    <Options/>
+    <Implementation title="impl_1" dir="impl_1" description="impl_1" synthesis="lse" default_strategy="Strategy1">
+        <Options def_top="blink_himax">
+            <Option name="include path" value="../src;../../common"/>
+            <Option name="top" value="blink_himax"/>
+        </Options>
+        <Source name="../src/blink_himax.sv" type="Verilog" type_short="Verilog">
+            <Options VerilogStandard="System Verilog" top_module="blink_himax"/>
+        </Source>
+        <Source name="../../common/ice40_resetn.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../common/lsc_i2cm_16.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../common/lsc_i2cm_himax.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../cdc_utils/rtl/verilog/cc561.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../cdc_utils/rtl/verilog/sync2_pgen.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../common/sensorModule.pdc" type="Physical Constraints File" type_short="PDC">
+            <Options/>
+        </Source>
+        <Source name="../src/ram256x16_himax.mem" type="Unknown Type" type_short="Unknown">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1.xcf" type="Programming Project File" type_short="Programming">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/impl_1.ldc" type="LSE Design Constraints File" type_short="LDC">
+            <Options/>
+        </Source>
+    </Implementation>
+    <Strategy name="Strategy1" file="blink1.sty"/>
+</RadiantProject>

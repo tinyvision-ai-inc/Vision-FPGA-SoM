@@ -13,4 +13,14 @@ local-settings.mk
 *.json
 *#
 .#*
+*.history
+*.asc
+*.bin
 *~
+*.wlf
+*.qdb
+*.qpg
+*.qtl
+*_vmake
+*.xml
+*.cfg

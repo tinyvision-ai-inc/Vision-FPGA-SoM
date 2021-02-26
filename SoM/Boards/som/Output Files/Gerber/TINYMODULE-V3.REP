@@ -1,0 +1,461 @@
+*************************************************************
+FileName = TINYMODULE-V3.GBR
+AutoAperture = True
+*************************************************************
+Generating : Drill Drawing
+      File : TINYMODULE-V3.GD1
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D11
+    D78
+    D127
+    D128
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : TINYMODULE-V3.GG1
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D127
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : TINYMODULE-V3.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+*************************************************************
+
+*************************************************************
+Generating : AssemTOP
+      File : TINYMODULE-V3.GM16
+
+    Adding Layer      : AssemTOP
+
+
+Used DCodes :
+    D11
+    D13
+    D126
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : TINYMODULE-V3.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D15
+    D20
+    D27
+    D69
+    D72
+    D73
+    D76
+    D77
+    D78
+    D81
+    D82
+    D83
+    D84
+    D87
+    D90
+    D93
+    D95
+    D96
+    D97
+    D98
+    D99
+    D100
+    D101
+    D102
+    D103
+    D104
+    D105
+    D106
+    D107
+    D108
+*************************************************************
+
+*************************************************************
+Generating : FactoryNotes
+      File : TINYMODULE-V3.GM3
+
+    Adding Layer      : FactoryNotes
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D119
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : TINYMODULE-V3.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+*************************************************************
+
+*************************************************************
+Generating : AssemBOT
+      File : TINYMODULE-V3.GM17
+
+    Adding Layer      : AssemBOT
+
+
+Used DCodes :
+    D12
+    D13
+    D126
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : TINYMODULE-V3.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D46
+    D53
+    D68
+    D69
+    D71
+    D82
+    D101
+    D109
+    D110
+    D111
+    D112
+    D113
+    D114
+    D115
+    D116
+    D117
+    D118
+*************************************************************
+
+*************************************************************
+Generating : BoardOutline
+      File : TINYMODULE-V3.GM6
+
+    Adding Layer      : BoardOutline
+
+
+Used DCodes :
+    D120
+*************************************************************
+
+*************************************************************
+Generating : PWR
+      File : TINYMODULE-V3.G4
+
+    Adding Layer      : PWR
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D96
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : TINYMODULE-V3.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D15
+*************************************************************
+
+*************************************************************
+Generating : Mid-Layer 1
+      File : TINYMODULE-V3.G2
+
+    Adding Layer      : Mid-Layer 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D15
+    D78
+    D96
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : TINYMODULE-V3.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+    D68
+    D69
+    D70
+    D71
+*************************************************************
+
+*************************************************************
+Generating : Mid-Layer 2
+      File : TINYMODULE-V3.G3
+
+    Adding Layer      : Mid-Layer 2
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D15
+    D83
+    D96
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : TINYMODULE-V3.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D20
+    D27
+    D97
+    D98
+    D99
+    D100
+    D101
+    D102
+    D103
+    D104
+    D105
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 15
+      File : TINYMODULE-V3.GM15
+
+    Adding Layer      : Mechanical 15
+
+
+Used DCodes :
+    D12
+    D13
+    D126
+*************************************************************
+
+*************************************************************
+Generating : GND
+      File : TINYMODULE-V3.G1
+
+    Adding Layer      : GND
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D96
+*************************************************************
+
+*************************************************************
+Generating : Frame
+      File : TINYMODULE-V3.GM10
+
+    Adding Layer      : Frame
+
+
+Used DCodes :
+    D11
+    D12
+    D78
+    D121
+    D122
+    D123
+    D124
+    D125
+*************************************************************
+
+*************************************************************
+Generating : Top Layer
+      File : TINYMODULE-V3.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D69
+    D72
+    D73
+    D74
+    D75
+    D76
+    D77
+    D78
+    D79
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+    D86
+    D87
+    D88
+    D89
+    D90
+    D91
+    D92
+    D93
+    D94
+    D95
+    D96
+*************************************************************
+

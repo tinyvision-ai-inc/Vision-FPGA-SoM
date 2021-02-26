@@ -23,7 +23,7 @@ module ice40_resetn(
      end
    
    
-   wire resetn = &reset_cnt;
+   assign resetn = &reset_cnt;
 
    always @(posedge clk) begin
       reset_cnt <= reset_cnt + !resetn;

@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: E:\@@@@Darial\@@@Venkat\VisionSOM\som_devkit\CAD\DevKit - PCB.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=devkit - pcb-roundholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=devkit - pcb-slotholes.txt|DrillLayers=gtl,gbl

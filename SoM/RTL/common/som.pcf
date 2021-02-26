@@ -12,19 +12,22 @@ set_io mem_sio[2] 	18
 
 # Host interface, programmable IO
 set_io host_sck_uart_rx 	44
-set_io host_ssn 	3
 set_io host_mosi_uart_tx 	4
-set_io host_miso 	48
-set_io host_intr 	47
+
+set_io host_sck 	44
+set_io host_ssn 	3
+set_io host_mosi	4
+set_io host_miso 	2
+set_io host_intr 	45
 set_io gpio[0] 		46
-set_io gpio[1] 		45
-set_io gpio[2] 		2
+set_io gpio[1] 		47
+set_io gpio[2] 		48
 
 # Imager and sensors (1.8V) SPI
 set_io sensor_sck 	10
 set_io sensor_mosi 	12
 set_io sensor_miso 	11
-set_io imager_ssn 	43
+set_io imager_ssn 	35
 set_io imu_ssn 		23
 set_io imu_intr 	9
 
@@ -35,7 +38,7 @@ set_io mic_dout 	20
 
 # Imager
 set_io sensor_clk 	42
-set_io px_clk 		35
+set_io px_clk 		43
 set_io px_fv 		25
 set_io px_lv 		26
 set_io pxd[7] 		38
@@ -51,31 +54,4 @@ set_io pxd[0] 		31
 set_io led_red 		39
 set_io led_green 	40
 set_io led_blue 	41
-
-#ldc_set_port -iobuf {IO_TYPE=LVCMOS18} [get_ports mem_*]
-#ldc_set_port -iobuf {IO_TYPE=LVCMOS18} [get_ports imu_*]
-#ldc_set_port -iobuf {IO_TYPE=LVCMOS18} [get_ports sensor_*]
-#ldc_set_port -iobuf {IO_TYPE=LVCMOS18} [get_ports imager_*]
-#ldc_set_port -iobuf {IO_TYPE=LVCMOS18} [get_ports sram_*]
-#ldc_set_port -iobuf {IO_TYPE=LVCMOS18} [get_ports sensor_sck]
-#ldc_set_port -iobuf {IO_TYPE=LVCMOS18} [get_ports sensor_mosi]
-#ldc_set_port -iobuf {IO_TYPE=LVCMOS18} [get_ports sensor_miso]
-
-#ldc_set_port -iobuf {PULLMODE=10K IO_TYPE=LVCMOS18} [get_ports {pxd[7]}]
-#ldc_set_port -iobuf {PULLMODE=10K IO_TYPE=LVCMOS18} [get_ports {pxd[6]}]
-#ldc_set_port -iobuf {PULLMODE=10K IO_TYPE=LVCMOS18} [get_ports {pxd[5]}]
-#ldc_set_port -iobuf {PULLMODE=10K IO_TYPE=LVCMOS18} [get_ports {pxd[4]}]
-#ldc_set_port -iobuf {PULLMODE=10K IO_TYPE=LVCMOS18} [get_ports {pxd[3]}]
-#ldc_set_port -iobuf {PULLMODE=10K IO_TYPE=LVCMOS18} [get_ports {pxd[2]}]
-#ldc_set_port -iobuf {PULLMODE=10K IO_TYPE=LVCMOS18} [get_ports {pxd[1]}]
-#ldc_set_port -iobuf {PULLMODE=10K IO_TYPE=LVCMOS18} [get_ports {pxd[0]}]
-#ldc_set_port -iobuf {PULLMODE=10K IO_TYPE=LVCMOS18} [get_ports {px_clk}]
-#ldc_set_port -iobuf {PULLMODE=10K IO_TYPE=LVCMOS18} [get_ports {px_fv}]
-#ldc_set_port -iobuf {PULLMODE=10K IO_TYPE=LVCMOS18} [get_ports {px_lv}]
-
-#ldc_set_port -iobuf {PULLMODE=10K IO_TYPE=LVCMOS18} [get_ports {px_*}]
-
-#ldc_set_port -iobuf {IO_TYPE=LVCMOS18} [get_ports flash_*]
-
-#ldc_set_port -iobuf {IO_TYPE=LVCMOS18} [get_ports mic_clk]
-#ldc_set_port -iobuf {IO_TYPE=LVCMOS18} [get_ports mic_*]
+set_io sensor_led 	23
