@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
 
-ser = serial.Serial(port='COM18', baudrate=230400, timeout=1.0)
+ser = serial.Serial(port='COM17', baudrate=230400, timeout=1.0)
 ser.set_buffer_size(rx_size = 25000, tx_size = 12800)
 
 print(ser.name)

@@ -1,0 +1,471 @@
+         Lattice Mapping Report File for Design Module 'blink_impl_1'
+
+Target Vendor:        LATTICE
+Target Device:        iCE40UP5KSG48
+Target Performance:   High-Performance_1.2V
+
+Mapper:    version Radiant Software (64-bit) 2.2.0.97.3
+Mapped on: Thu Feb 25 22:40:41 2021
+
+Design Information
+------------------
+
+Command line:   map blink_impl_1_syn.udb
+     F:/whathisface/Vision-FPGA-SoM/SoM/RTL/common/sensorModule.pdc -o
+     blink_impl_1_map.udb -mp blink_impl_1.mrp -hierrpt -gui
+
+Design Summary
+--------------
+
+   Number of slice registers: 354 out of  5280 (7%)
+   Number of I/O registers:      5 out of   117 (4%)
+   Number of LUT4s:           675 out of  5280 (13%)
+      Number of logic LUT4s:             376
+      Number of inserted feedthru LUT4s: 138
+      Number of replicated LUT4s:          5
+      Number of ripple logic:             78 (156 LUT4s)
+   Number of IO sites used:   20 out of 39 (51%)
+      Number of IO sites used for general PIOs: 17
+      Number of IO sites used for I3Cs: 0 out of 2 (0%)
+      Number of IO sites used for PIOs+I3Cs: 17 out of 36 (47%)
+      (note: If I3C is not used, its site can be used as general PIO)
+      Number of IO sites used for OD+RGB IO buffers: 3 out of 3 (100%)
+   Number of DSPs:             0 out of 8 (0%)
+   Number of I2Cs:             0 out of 2 (0%)
+   Number of High Speed OSCs:  1 out of 1 (100%)
+   Number of Low Speed OSCs:   0 out of 1 (0%)
+   Number of RGB PWM:          0 out of 1 (0%)
+   Number of RGB Drivers:      1 out of 1 (100%)
+   Number of SCL FILTERs:      0 out of 2 (0%)
+   Number of SRAMs:            4 out of 4 (100%)
+   Number of WARMBOOTs:        0 out of 1 (0%)
+   Number of SPIs:             0 out of 2 (0%)
+   Number of EBRs:             3 out of 30 (10%)
+   Number of PLLs:             0 out of 1 (0%)
+   Number of Clocks:  2
+      Net clk: 300 loads, 300 rising, 0 falling (Driver: Pin u_hfosc/CLKHF)
+      Net px_clk_c: 41 loads, 41 rising, 0 falling (Driver: Port px_clk)
+   Number of Clock Enables:  25
+      Net VCC_net: 12 loads, 0 SLICEs
+      Net i_stream_dual_clock_fifo.fifo_dout_7__N_408: 1 loads, 0 SLICEs
+      Net n1916: 8 loads, 8 SLICEs
+      Net n1907: 1 loads, 1 SLICEs
+      Net n1909: 1 loads, 1 SLICEs
+      Net n2898: 9 loads, 9 SLICEs
+      Net fifo_we: 1 loads, 0 SLICEs
+      Net n1889: 2 loads, 2 SLICEs
+      Net we[2]: 1 loads, 0 SLICEs
+      Net we[0]: 1 loads, 0 SLICEs
+      Net ram_addr[0]: 8 loads, 0 SLICEs
+      Net n2892: 1 loads, 1 SLICEs
+      Net n3129: 16 loads, 16 SLICEs
+      Net uart_tx_valid_N_204: 1 loads, 1 SLICEs
+
+                                    Page 1
+
+
+
+
+
+Design Summary (cont)
+---------------------
+      Net we[1]: 1 loads, 0 SLICEs
+      Net n2899: 9 loads, 9 SLICEs
+      Net u_lsc_i2cm_himax.n1891: 7 loads, 7 SLICEs
+      Net u_lsc_i2cm_himax.u_lsc_i2cm.running_N_346: 14 loads, 14 SLICEs
+      Net u_lsc_i2cm_himax.u_lsc_i2cm.n1905: 8 loads, 8 SLICEs
+      Net u_lsc_uart.n23: 12 loads, 12 SLICEs
+      Net u_lsc_uart.n1900: 8 loads, 8 SLICEs
+      Net u_lsc_uart.n3115: 16 loads, 16 SLICEs
+      Net n1898: 8 loads, 8 SLICEs
+      Net i_ice40_spram_128kx8.mask[0]: 8 loads, 0 SLICEs
+      Net i_ice40_spram_128kx8.we[3]_2: 1 loads, 0 SLICEs
+   Number of LSRs:  10
+      Net resetn_N_232: 155 loads, 155 SLICEs
+      Net n2926: 9 loads, 9 SLICEs
+      Net n2925: 1 loads, 1 SLICEs
+      Net n2579: 14 loads, 14 SLICEs
+      Net u_lsc_uart.n2921: 9 loads, 9 SLICEs
+      Net u_lsc_uart.n2920: 9 loads, 9 SLICEs
+      Net u_lsc_uart.n2278: 1 loads, 1 SLICEs
+      Net u_lsc_uart.n2565: 14 loads, 14 SLICEs
+      Net u_lsc_uart.n1289: 3 loads, 3 SLICEs
+      Net u_lsc_uart.n1281: 3 loads, 3 SLICEs
+   Top 10 highest fanout non-clock nets:
+      Net resetn_N_232: 196 loads
+      Net VCC_net: 63 loads
+      Net s_state[0]: 54 loads
+      Net s_state[2]: 53 loads
+      Net ram_addr[15]: 41 loads
+      Net s_state[1]: 35 loads
+      Net i2c_running: 29 loads
+      Net fifo_empty: 22 loads
+      Net ram_addr[16]: 17 loads
+      Net lsb_addr: 16 loads
+
+
+
+
+   Number of warnings:  104
+   Number of errors:    0
+
+Design Errors/Warnings
+----------------------
+
+WARNING - map: No port matched 'mem_sio[0]'.
+WARNING - map: Can't resolve object 'mem_sio[0]' in constraint 'ldc_set_location
+     -site {14} [get_ports {mem_sio[0]}]'.
+WARNING - map: No port matched 'mem_sio[1]'.
+WARNING - map: Can't resolve object 'mem_sio[1]' in constraint 'ldc_set_location
+     -site {17} [get_ports {mem_sio[1]}]'.
+WARNING - map: No port matched 'mem_sck'.
+WARNING - map: Can't resolve object 'mem_sck' in constraint 'ldc_set_location
+     -site {15} [get_ports mem_sck]'.
+WARNING - map: No port matched 'mem_ssn'.
+WARNING - map: Can't resolve object 'mem_ssn' in constraint 'ldc_set_location
+     -site {16} [get_ports mem_ssn]'.
+WARNING - map: No port matched 'mem_sio[3]'.
+WARNING - map: Can't resolve object 'mem_sio[3]' in constraint 'ldc_set_location
+
+                                    Page 2
+
+
+
+
+
+Design Errors/Warnings (cont)
+-----------------------------
+     -site {19} [get_ports {mem_sio[3]}]'.
+WARNING - map: No port matched 'mem_sio[2]'.
+WARNING - map: Can't resolve object 'mem_sio[2]' in constraint 'ldc_set_location
+     -site {18} [get_ports {mem_sio[2]}]'.
+WARNING - map: No port matched 'host_sck'.
+WARNING - map: Can't resolve object 'host_sck' in constraint 'ldc_set_location
+     -site {44} [get_ports host_sck]'.
+WARNING - map: No port matched 'host_ssn'.
+WARNING - map: Can't resolve object 'host_ssn' in constraint 'ldc_set_location
+     -site {3} [get_ports host_ssn]'.
+WARNING - map: No port matched 'host_mosi'.
+WARNING - map: Can't resolve object 'host_mosi' in constraint 'ldc_set_location
+     -site {4} [get_ports host_mosi]'.
+WARNING - map: No port matched 'host_miso'.
+WARNING - map: Can't resolve object 'host_miso' in constraint 'ldc_set_location
+     -site {2} [get_ports host_miso]'.
+WARNING - map: No port matched 'imager_ssn'.
+WARNING - map: Can't resolve object 'imager_ssn' in constraint 'ldc_set_location
+     -site {35} [get_ports imager_ssn]'.
+WARNING - map: No port matched 'sensor_sck'.
+WARNING - map: Can't resolve object 'sensor_sck' in constraint 'ldc_set_location
+     -site {10} [get_ports sensor_sck]'.
+WARNING - map: No port matched 'sensor_mosi'.
+WARNING - map: Can't resolve object 'sensor_mosi' in constraint
+     'ldc_set_location -site {12} [get_ports sensor_mosi]'.
+WARNING - map: No port matched 'sensor_miso'.
+WARNING - map: Can't resolve object 'sensor_miso' in constraint
+     'ldc_set_location -site {11} [get_ports sensor_miso]'.
+WARNING - map: No port matched 'imu_intr'.
+WARNING - map: Can't resolve object 'imu_intr' in constraint 'ldc_set_location
+     -site {9} [get_ports imu_intr]'.
+WARNING - map: No port matched 'sram_ssn'.
+WARNING - map: Can't resolve object 'sram_ssn' in constraint 'ldc_set_location
+     -site {6} [get_ports sram_ssn]'.
+WARNING - map: No port matched 'mic_clk'.
+WARNING - map: Can't resolve object 'mic_clk' in constraint 'ldc_set_location
+     -site {21} [get_ports mic_clk]'.
+WARNING - map: No port matched 'mic_ws'.
+WARNING - map: Can't resolve object 'mic_ws' in constraint 'ldc_set_location
+     -site {13} [get_ports mic_ws]'.
+WARNING - map: No port matched 'mic_dout'.
+WARNING - map: Can't resolve object 'mic_dout' in constraint 'ldc_set_location
+     -site {20} [get_ports mic_dout]'.
+WARNING - map: No port matched 'pxd[7]'.
+WARNING - map: Can't resolve object 'pxd[7]' in constraint 'ldc_set_location
+     -site {38} [get_ports {pxd[7]}]'.
+WARNING - map: No port matched 'pxd[6]'.
+WARNING - map: Can't resolve object 'pxd[6]' in constraint 'ldc_set_location
+     -site {34} [get_ports {pxd[6]}]'.
+WARNING - map: No port matched 'pxd[5]'.
+WARNING - map: Can't resolve object 'pxd[5]' in constraint 'ldc_set_location
+     -site {37} [get_ports {pxd[5]}]'.
+WARNING - map: No port matched 'pxd[4]'.
+WARNING - map: Can't resolve object 'pxd[4]' in constraint 'ldc_set_location
+     -site {32} [get_ports {pxd[4]}]'.
+WARNING - map: No port matched 'mem_*'.
+WARNING - map: Can't resolve object 'mem_*' in constraint 'ldc_set_port -iobuf
+
+                                    Page 3
+
+
+
+
+
+Design Errors/Warnings (cont)
+-----------------------------
+     {IO_TYPE=LVCMOS18} [get_ports mem_*]'.
+WARNING - map: No port matched 'imu_*'.
+WARNING - map: Can't resolve object 'imu_*' in constraint 'ldc_set_port -iobuf
+     {IO_TYPE=LVCMOS18} [get_ports imu_*]'.
+WARNING - map: No port matched 'imager_*'.
+WARNING - map: Can't resolve object 'imager_*' in constraint 'ldc_set_port
+     -iobuf {IO_TYPE=LVCMOS18} [get_ports imager_*]'.
+WARNING - map: No port matched 'sram_*'.
+WARNING - map: Can't resolve object 'sram_*' in constraint 'ldc_set_port -iobuf
+     {IO_TYPE=LVCMOS18} [get_ports sram_*]'.
+WARNING - map: No port matched 'sensor_sck'.
+WARNING - map: Can't resolve object 'sensor_sck' in constraint 'ldc_set_port
+     -iobuf {IO_TYPE=LVCMOS18} [get_ports sensor_sck]'.
+WARNING - map: No port matched 'sensor_mosi'.
+WARNING - map: Can't resolve object 'sensor_mosi' in constraint 'ldc_set_port
+     -iobuf {IO_TYPE=LVCMOS18} [get_ports sensor_mosi]'.
+WARNING - map: No port matched 'sensor_miso'.
+WARNING - map: Can't resolve object 'sensor_miso' in constraint 'ldc_set_port
+     -iobuf {IO_TYPE=LVCMOS18} [get_ports sensor_miso]'.
+WARNING - map: No port matched 'flash_*'.
+WARNING - map: Can't resolve object 'flash_*' in constraint 'ldc_set_port -iobuf
+     {IO_TYPE=LVCMOS18} [get_ports flash_*]'.
+WARNING - map: No port matched 'mic_*'.
+WARNING - map: Can't resolve object 'mic_*' in constraint 'ldc_set_port -iobuf
+     {IO_TYPE=LVCMOS18} [get_ports mic_*]'.
+WARNING - map: No port matched 'gpio_*'.
+WARNING - map: Can't resolve object 'gpio_*' in constraint 'ldc_set_port -iobuf
+     {IO_TYPE=LVCMOS33} [get_ports gpio_*]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {14} [get_ports
+     {mem_sio[0]}]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {17} [get_ports
+     {mem_sio[1]}]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {15} [get_ports
+     mem_sck]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {16} [get_ports
+     mem_ssn]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {19} [get_ports
+     {mem_sio[3]}]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {18} [get_ports
+     {mem_sio[2]}]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {44} [get_ports
+     host_sck]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {3} [get_ports
+     host_ssn]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {4} [get_ports
+     host_mosi]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {2} [get_ports
+     host_miso]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {35} [get_ports
+     imager_ssn]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {10} [get_ports
+     sensor_sck]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {12} [get_ports
+     sensor_mosi]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {11} [get_ports
+     sensor_miso]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {9} [get_ports
+
+                                    Page 4
+
+
+
+
+
+Design Errors/Warnings (cont)
+-----------------------------
+     imu_intr]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {6} [get_ports
+     sram_ssn]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {21} [get_ports
+     mic_clk]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {13} [get_ports
+     mic_ws]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {20} [get_ports
+     mic_dout]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {38} [get_ports
+     {pxd[7]}]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {34} [get_ports
+     {pxd[6]}]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {37} [get_ports
+     {pxd[5]}]'.
+WARNING - map: Remove invalid constraint 'ldc_set_location -site {32} [get_ports
+     {pxd[4]}]'.
+WARNING - map: Remove invalid constraint 'ldc_set_port -iobuf {IO_TYPE=LVCMOS18}
+     [get_ports mem_*]'.
+WARNING - map: Remove invalid constraint 'ldc_set_port -iobuf {IO_TYPE=LVCMOS18}
+     [get_ports imu_*]'.
+WARNING - map: Remove invalid constraint 'ldc_set_port -iobuf {IO_TYPE=LVCMOS18}
+     [get_ports imager_*]'.
+WARNING - map: Remove invalid constraint 'ldc_set_port -iobuf {IO_TYPE=LVCMOS18}
+     [get_ports sram_*]'.
+WARNING - map: Remove invalid constraint 'ldc_set_port -iobuf {IO_TYPE=LVCMOS18}
+     [get_ports sensor_sck]'.
+WARNING - map: Remove invalid constraint 'ldc_set_port -iobuf {IO_TYPE=LVCMOS18}
+     [get_ports sensor_mosi]'.
+WARNING - map: Remove invalid constraint 'ldc_set_port -iobuf {IO_TYPE=LVCMOS18}
+     [get_ports sensor_miso]'.
+WARNING - map: Remove invalid constraint 'ldc_set_port -iobuf {IO_TYPE=LVCMOS18}
+     [get_ports flash_*]'.
+WARNING - map: Remove invalid constraint 'ldc_set_port -iobuf {IO_TYPE=LVCMOS18}
+     [get_ports mic_*]'.
+WARNING - map: Remove invalid constraint 'ldc_set_port -iobuf {IO_TYPE=LVCMOS33}
+     [get_ports gpio_*]'.
+WARNING - map: The clock port [px_clk] is assigned to a non clock dedicated pin
+     [43], which might affect the clock performance. Use dedicated clock
+     resources for the port.
+WARNING - map: Constraint/Attribute IO_TYPE = LVCMOS18 cannot be set on port
+     'led_red', it is ignored.
+WARNING - map: Constraint/Attribute IO_TYPE = LVCMOS18 cannot be set on port
+     'led_green', it is ignored.
+WARNING - map: Constraint/Attribute IO_TYPE = LVCMOS18 cannot be set on port
+     'led_blue', it is ignored.
+WARNING - map: The clock port [px_clk] is assigned to a non clock dedicated pin
+     [43], which might affect the clock performance. Use dedicated clock
+     resources for the port.
+
+IO (PIO) Attributes
+-------------------
+
++---------------------+-----------+-----------+-------+-------+-----------+
+| IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
+|                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+                                    Page 5
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
+| led_red             | OUTPUT    | NA        |       |       | RGB       |
++---------------------+-----------+-----------+-------+-------+-----------+
+| led_green           | OUTPUT    | NA        |       |       | RGB       |
++---------------------+-----------+-----------+-------+-------+-----------+
+| led_blue            | OUTPUT    | NA        |       |       | RGB       |
++---------------------+-----------+-----------+-------+-------+-----------+
+| i2c_scl             | OUTPUT    | LVCMOS18  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_intr           | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| gpio[0]             | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| gpio[1]             | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| gpio[2]             | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| uart_tx             | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| i2c_sda             | OUTPUT    | LVCMOS18  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| sensor_clk          | OUTPUT    | LVCMOS18  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| sensor_led          | OUTPUT    | LVCMOS18  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| uart_rx             | INPUT     | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| px_clk              | INPUT     | LVCMOS18  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| px_fv               | INPUT     | LVCMOS18  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| px_lv               | INPUT     | LVCMOS18  | I     |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| pxd[3]              | INPUT     | LVCMOS18  | I     |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| pxd[2]              | INPUT     | LVCMOS18  | I     |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| pxd[1]              | INPUT     | LVCMOS18  | I     |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| pxd[0]              | INPUT     | LVCMOS18  | I     |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+OSC Summary
+-----------
+
+OSC 1:                                 Pin/Node Value
+  OSC Instance Name:                            u_hfosc
+  Power UP:                            NODE     VCC_net
+  Enable Signal:                       NODE     VCC_net
+  OSC Output:                          NODE     clk
+  DIV Setting:                                  00
+
+ASIC Components
+---------------
+
+Instance Name: i_stream_dual_clock_fifo/dual_clock_fifo/mem0
+         Type: EBR
+Instance Name: u_io_pxd[3]
+
+                                    Page 6
+
+
+
+
+
+ASIC Components (cont)
+----------------------
+         Type: IOLOGIC
+Instance Name: u_led_driver_RGB_CORE_inst
+         Type: RGBA_DRV
+Instance Name: u_io_pxd[2]
+         Type: IOLOGIC
+Instance Name: u_io_pxd[1]
+         Type: IOLOGIC
+Instance Name: u_io_pxd[0]
+         Type: IOLOGIC
+Instance Name: u_io_lv
+         Type: IOLOGIC
+Instance Name: u_lsc_i2cm_himax/mux_283
+         Type: EBR
+Instance Name: u_lsc_uart/genblk1.u_ram512x8_0/lscc_ram_dp_inst/mem_main/NON_MIX
+     .ADDR_ROUTE[0].DATA_ROUTE[0].no_init.u_mem0/ICE_MEM.u_mem0
+         Type: EBR
+Instance Name: i_ice40_spram_128kx8/genblk1[2].i_spram16k_16
+         Type: SRAM
+Instance Name: i_ice40_spram_128kx8/genblk1[3].i_spram16k_16
+         Type: SRAM
+Instance Name: i_ice40_spram_128kx8/genblk1[0].i_spram16k_16
+         Type: SRAM
+Instance Name: i_ice40_spram_128kx8/genblk1[1].i_spram16k_16
+         Type: SRAM
+Instance Name: u_hfosc
+         Type: HFOSC
+
+Run Time and Memory Usage
+-------------------------
+
+   Total CPU Time: 0 secs
+   Total REAL Time: 0 secs
+   Peak Memory Usage: 61 MB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    Page 7
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995
+     AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent
+     Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems
+     All rights reserved.
+Copyright (c) 2002-2020 Lattice Semiconductor
+     Corporation,  All rights reserved.
