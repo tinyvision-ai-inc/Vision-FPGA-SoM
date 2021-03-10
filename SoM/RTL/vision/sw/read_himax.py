@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
 
-ser = serial.Serial(port='COM17', baudrate=230400, timeout=1.0)
-ser.set_buffer_size(rx_size = 25000, tx_size = 12800)
+ser = serial.Serial(port='COM7', baudrate=460800, timeout=1.0)
+ser.set_buffer_size(rx_size = 1000000, tx_size = 12800)
 
 print(ser.name)
 ser.flushInput()
@@ -21,14 +21,16 @@ ser.flushOutput()
 
 #plt.ion()
 
+(cols, rows) = (162, 162)
+#(cols, rows) = (324, 324)
+
 # Throw away bad pixels
 while(True):
     ser.flushInput()
     ser.write(b'x')
-    resp = ser.read(50000) # Max length to be read is a frame
+    resp = ser.read(100000) # Max length to be read is a frame
     image = np.asarray(list(resp))
 
-    cols = 162
     rows = int(np.floor(len(image)/cols))
     print(rows)
     image = image[0:rows*cols]
@@ -36,4 +38,4 @@ while(True):
 
     plt.imshow(image, cmap='gray', vmin=0, vmax=255)
     plt.show()
-    time.sleep(0.1)
+    #time.sleep(0.1)

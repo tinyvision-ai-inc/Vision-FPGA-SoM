@@ -24,3 +24,4 @@ local-settings.mk
 *_vmake
 *.xml
 *.cfg
+vision/synth/impl_1/*

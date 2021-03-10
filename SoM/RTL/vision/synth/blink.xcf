@@ -17,8 +17,8 @@
 				<BScanLen>1</BScanLen>
 				<BScanVal>0</BScanVal>
 			</Bypass>
-			<File>../blink_impl_1.bin</File>
-			<FileTime>01/25/21 17:50:20</FileTime>
+			<File>../impl_1/blink_impl_1.bin</File>
+			<FileTime>03/10/21 10:17:21</FileTime>
 			<MemoryType>External SPI Flash Memory (SPI FLASH)</MemoryType>
 			<Operation>Erase,Program,Verify</Operation>
 			<Option>
@@ -46,7 +46,6 @@
 					<Option>
 						<SVFVendor>JTAG STANDARD</SVFVendor>
 						<IOState>HighZ</IOState>
-						<IOVectorData>@</IOVectorData>
 						<AccessMode>Direct Programming</AccessMode>
 					</Option>
 				</Device>
@@ -60,7 +59,7 @@
 					<IDCode>0x12</IDCode>
 					<Package>8-pad USON</Package>
 					<Operation>Erase,Program,Verify</Operation>
-					<File>../blink_impl_1.bin</File>
+					<File>../impl_1/blink_impl_1.bin</File>
 					<AddressBase>0x00000000</AddressBase>
 					<EndAddress>0x00010000</EndAddress>
 					<DeviceSize>4</DeviceSize>
@@ -86,88 +85,6 @@
 			</FPGADevice>
 			</FPGALoader>
 		</Device>
-		<Device>
-			<SelectedProg value="FALSE"/>
-			<Pos>2</Pos>
-			<Vendor>Lattice</Vendor>
-			<Family>iCE40 UltraPlus</Family>
-			<Name>iCE40UP5K</Name>
-			<Package>All</Package>
-			<Bypass>
-				<InstrLen>8</InstrLen>
-				<InstrVal>11111111</InstrVal>
-				<BScanLen>1</BScanLen>
-				<BScanVal>0</BScanVal>
-			</Bypass>
-			<File>../../../../../../../tinyVision_sensai/RTL/UPduino/Himax/rtl/reference_bitfiles/HumanPresence_Firmware.bin</File>
-			<FileTime>09/19/20 16:33:07</FileTime>
-			<MemoryType>External SPI Flash Memory (SPI FLASH)</MemoryType>
-			<Operation>Erase,Program,Verify</Operation>
-			<Option>
-				<SVFVendor>JTAG STANDARD</SVFVendor>
-				<AccessMode>Direct Programming</AccessMode>
-			</Option>
-			<FPGALoader>
-			<CPLDDevice>
-				<Device>
-					<Pos>2</Pos>
-					<Vendor>Lattice</Vendor>
-					<Family>iCE40 UltraPlus</Family>
-					<Name>iCE40UP5K</Name>
-					<IDCode>0x11200639</IDCode>
-					<Package>All</Package>
-					<PON>iCE40UP5K</PON>
-					<Bypass>
-						<InstrLen>8</InstrLen>
-						<InstrVal>11111111</InstrVal>
-						<BScanLen>1</BScanLen>
-						<BScanVal>0</BScanVal>
-					</Bypass>
-					<MemoryType>Compressed Random Access Memory (CRAM)</MemoryType>
-					<Operation>Bypass</Operation>
-					<Option>
-						<SVFVendor>JTAG STANDARD</SVFVendor>
-						<IOState>HighZ</IOState>
-						<IOVectorData>@</IOVectorData>
-						<AccessMode>Direct Programming</AccessMode>
-					</Option>
-				</Device>
-			</CPLDDevice>
-			<FlashDevice>
-				<Device>
-					<Pos>1</Pos>
-					<Vendor>WinBond</Vendor>
-					<Family>SPI Serial Flash</Family>
-					<Name>W25Q40CL</Name>
-					<IDCode>0x12</IDCode>
-					<Package>8-pad USON</Package>
-					<Operation>Erase,Program,Verify</Operation>
-					<File>../../../../../../../tinyVision_sensai/RTL/UPduino/Himax/rtl/reference_bitfiles/HumanPresence_Firmware.bin</File>
-					<AddressBase>0x00020000</AddressBase>
-					<EndAddress>0x00030000</EndAddress>
-					<DeviceSize>4</DeviceSize>
-					<DataSize>62376</DataSize>
-					<NumberOfDevices>1</NumberOfDevices>
-					<ReInitialize value="FALSE"/>
-				</Device>
-			</FlashDevice>
-			<FPGADevice>
-				<Device>
-					<Pos>1</Pos>
-					<Name></Name>
-					<File>C:/Users/vrang/OneDrive/Documents/GitHub/tinyVision_sensai/RTL/UPduino/Himax/rtl/reference_bitfiles/HumanPresence_Firmware.bin</File>
-					<LocalChainList>
-						<LocalDevice index="-99"
-							name="Unknown"
-							file="C:/Users/vrang/OneDrive/Documents/GitHub/tinyVision_sensai/RTL/UPduino/Himax/rtl/reference_bitfiles/HumanPresence_Firmware.bin"/>
-					</LocalChainList>
-					<Option>
-						<SVFVendor>JTAG STANDARD</SVFVendor>
-					</Option>
-				</Device>
-			</FPGADevice>
-			</FPGALoader>
-		</Device>
 	</Chain>
 	<ProjectOptions>
 		<Program>SEQUENTIAL</Program>
@@ -177,7 +94,7 @@
 		<EndTAP>TLR</EndTAP>
 		<DisableCheckBoard value="TRUE"/>
 		<VerifyUsercode value="FALSE"/>
-		<TCKDelay>4</TCKDelay>
+		<TCKDelay>1</TCKDelay>
 	</ProjectOptions>
 	<CableOptions>
 		<CableName>USB2</CableName>
