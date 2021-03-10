@@ -2,7 +2,7 @@
 <RadiantProject version="4.1" title="blink" device="iCE40UP5K-SG48I" performance_grade="High-Performance_1.2V" default_implementation="impl_1">
     <Options/>
     <Implementation title="impl_1" dir="impl_1" description="impl_1" synthesis="lse" default_strategy="Strategy1">
-        <Options def_top="blink_himax">
+        <Options def_top="fifo">
             <Option name="include path" value="../src;../../common"/>
             <Option name="top" value="blink_himax"/>
         </Options>
@@ -24,6 +24,27 @@
         <Source name="../../cdc_utils/rtl/verilog/sync2_pgen.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
+        <Source name="source/impl_1/ice40_spram_128kx8.sv" type="Verilog" type_short="Verilog">
+            <Options VerilogStandard="System Verilog"/>
+        </Source>
+        <Source name="source/impl_1/stream_dual_clock_fifo.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/stream_fifo_if.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/fifo.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/dpram512x8/dpram512x8.ipx" type="IPX_Module" type_short="IPX">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/dual_clock_fifo.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/lsc_uart.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
         <Source name="../../common/sensorModule.pdc" type="Physical Constraints File" type_short="PDC">
             <Options/>
         </Source>
@@ -33,7 +54,7 @@
         <Source name="source/impl_1.xcf" type="Programming Project File" type_short="Programming">
             <Options/>
         </Source>
-        <Source name="source/impl_1/impl_1.ldc" type="LSE Design Constraints File" type_short="LDC">
+        <Source name="source/impl_1/impl_1.ldc" type="LSE Design Constraints File" type_short="LDC" excluded="TRUE">
             <Options/>
         </Source>
     </Implementation>
