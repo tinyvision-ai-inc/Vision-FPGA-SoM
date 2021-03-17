@@ -1,0 +1,10 @@
+Output: P-CAD ASCII (AutoPCB)
+Type  : Exporter Wrapper
+From  : PCB Document [breakout_board.PcbDoc]
+   Generated File[breakout_board.PCB]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 3:35:37 PM On 10/15/2020

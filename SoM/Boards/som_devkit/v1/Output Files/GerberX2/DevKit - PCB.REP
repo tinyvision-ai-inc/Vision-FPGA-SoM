@@ -1,0 +1,471 @@
+*************************************************************
+FileName = DevKit - PCB.GBR
+AutoAperture = True
+*************************************************************
+Generating : Top Layer
+      File : DevKit - PCB_Copper_Signal_Top.gbr
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+    D68
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : DevKit - PCB_Copper_Signal_Bot.gbr
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D18
+    D26
+    D36
+    D37
+    D39
+    D40
+    D41
+    D42
+    D43
+    D47
+    D49
+    D54
+    D55
+    D56
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+    D68
+    D69
+    D70
+    D71
+    D72
+    D73
+    D74
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : DevKit - PCB_Pads_Bot.gbr
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D18
+    D26
+    D36
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D69
+    D70
+    D71
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : DevKit - PCB_Pads_Top.gbr
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : DevKit - PCB_Paste_Bot.gbr
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D18
+    D26
+    D69
+    D70
+    D71
+    D75
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : DevKit - PCB_Legend_Bot.gbr
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D75
+    D76
+    D77
+    D78
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : DevKit - PCB_Soldermask_Bot.gbr
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D62
+    D71
+    D79
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+    D86
+    D87
+    D88
+    D89
+    D90
+    D91
+    D92
+    D93
+    D94
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : DevKit - PCB_Legend_Top.gbr
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D75
+    D76
+    D77
+    D78
+    D95
+    D96
+    D97
+    D98
+    D99
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : DevKit - PCB_Paste_Top.gbr
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D13
+    D14
+    D15
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : DevKit - PCB_Soldermask_Top.gbr
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D62
+    D75
+    D82
+    D83
+    D84
+    D85
+    D86
+    D87
+    D88
+    D89
+    D90
+    D91
+    D92
+    D93
+    D100
+    D101
+    D102
+    D103
+    D104
+    D105
+    D106
+    D107
+    D108
+    D109
+    D110
+    D111
+    D112
+    D113
+    D114
+    D115
+    D116
+    D117
+    D118
+    D119
+    D120
+    D121
+    D122
+*************************************************************
+
+*************************************************************
+Generating : Keep-Out Layer
+      File : DevKit - PCB_Keep-out.gbr
+
+    Adding Layer      : Keep-Out Layer
+
+
+Used DCodes :
+    D75
+*************************************************************
+
+*************************************************************
+Generating : Bottom Assembly
+      File : DevKit - PCB_Mechanical_17.gbr
+
+    Adding Layer      : Bottom Assembly
+
+
+Used DCodes :
+    D77
+    D78
+    D97
+    D123
+*************************************************************
+
+*************************************************************
+Generating : Top Assembly
+      File : DevKit - PCB_Mechanical_16.gbr
+
+    Adding Layer      : Top Assembly
+
+
+Used DCodes :
+    D77
+    D78
+    D97
+    D123
+*************************************************************
+
+*************************************************************
+Generating : Profile
+      File : DevKit - PCB_Profile.gbr
+
+
+Used DCodes :
+    D124
+*************************************************************
+
+*************************************************************
+Generating : Non-plated through-hole drill file
+      File : DevKit - PCB_NPTH_Drill.gbr
+
+
+Used DCodes :
+    D125
+    D126
+*************************************************************
+
+*************************************************************
+Generating : Plated through-hole drill file
+      File : DevKit - PCB_PTH_Drill.gbr
+
+
+Used DCodes :
+    D127
+    D128
+    D129
+    D130
+    D131
+    D132
+    D133
+    D134
+*************************************************************
+
+*************************************************************
+Generating : Drill Drawing
+      File : DevKit - PCB_Drawing_1.gbr
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D75
+    D135
+    D136
+    D137
+    D138
+    D139
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : DevKit - PCB_Drillmap_1.gbr
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D77
+*************************************************************
+

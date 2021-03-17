@@ -1,0 +1,136 @@
+*************************************************************
+FileName = DevKit - PCB.PcbDoc
+ODB++ directory structure
+*************************************************************
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\matrix\matrix
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\profile
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\stephdr
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\keep-out_layer\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\keep-out_layer\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_1\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_1\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\board_outline\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\board_outline\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_3\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_3\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_4\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_4\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_5\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_5\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_7\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_7\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_9\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_9\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_10\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_10\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_12\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_12\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_6\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_6\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\bottom_3d_body\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\bottom_3d_body\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_15\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_15\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_20\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_20\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\top_3d_body\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\top_3d_body\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_32\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\mechanical_32\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\bottom_overlay\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\bottom_overlay\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\bottom_paste\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\bottom_paste\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\bottom_assembly\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\bottom_assembly\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\bottom_solder\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\bottom_solder\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\top_paste\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\top_paste\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\top_solder\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\top_solder\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\top_assembly\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\top_assembly\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\bottom_layer\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\bottom_layer\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\top_overlay\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\top_overlay\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\drill\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\drill\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\drill\tools
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\top_layer\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\top_layer\attrlist
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\comp_+_bot\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\comp_+_bot\components
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\comp_+_top\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\comp_+_top\components
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\rout\features
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\layers\rout\tools
+
+Generated File : G:\My Drive\Engagements\Contract\Contract\Vision SoM\som_devkit\CAD\Project Outputs for DevKit\odb\steps\pcb\eda\data
+
