@@ -1,7 +1,5 @@
 SRCS = 
 SRCS += ../common/ice40_resetn.v
-SRCS += ../common/spi_slave_core.sv
-SRCS += ../common/wb_spi_slave.sv
 SRCS += ../common/uart.v
 SRCS += my_pll.v
 SRCS += $(design).sv
