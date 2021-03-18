@@ -1,9 +1,3 @@
-.. this is a comment, it is not rendered
-   when adding new *.rst files, reference them here
-   in this index.rst for them to be rendered and added to the
-   table of contents
-
-
 =====================
 Vision FPGA SoM Documentation
 =====================
@@ -14,30 +8,13 @@ tinyVision.ai Inc.
 Vision FPGA SoM: PCB Design Files, Designs, Documentation
 ------------------------------------------------------
 
-..The UPDuino v3.0 is a small, low-cost FPGA board. The board features an on-board FPGA programmer, flash and LED with _all_ FPGA pins brought out to easy to use 0.1" header pins for fast prototyping.
-
-..The tinyVision.ai UPduino v3.0 Board Features:
+The tinyVision.ai Vision FPGA SoM Features:
 
 * Lattice UltraPlus ICE40UP5K FPGA with 5.3K LUTs, 1Mb SPRAM, 120Kb DPRAM, 8 Multipliers
-* FTDI FT232H USB to SPI Device
-* _ALL_ 32 FPGA GPIO on 0.1” headers
-* _ALL_ FTDI pins brought to test points
-* 4MB SPI Flash
-* RGB LED
-* On board 3.3V and 1.2V Regulators, can supply 3.3V to your project
-* Open source schematic and layout using KiCAD design tools
+* Open source schematic and layout using Altium design tools
 * Integrated into the open source `APIO toolchain <https://github.com/FPGAwars/apio>`_
 
 
-Please see the `wiki page <https://github.com/tinyvision-ai-inc/UPduino-v3.0/wiki>`_  for the changes that were implemented from v2.1. Some salient features are:
-
-* 4 layer board with a solid ground plane, proper layout and decoupling for good signal integrity and FPGA operation
-* Access to on-board 12MHz oscillator using a jumper (short R16)
-* _All_ FPGA pins including LED driver pins are brought to 0.1" headers
-* qSPI flash capability
-* tinyFPGA bootloader compatible
-
-Please fill out the `survey <https://www.surveymonkey.com/r/HH536D8>`_ to suggest improvements to this board. We really appreciate the feedback and will make improvements as business permits!
 
 Useful links:
 
