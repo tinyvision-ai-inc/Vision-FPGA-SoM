@@ -1,0 +1,52 @@
+Protel Design System Design Rule Check
+PCB File : E:\@@@@Darial\@@@Venkat\VisionSOM\som_breakout\breakout_board.PcbDoc
+Date     : 10/15/2020
+Time     : 3:31:01 PM
+
+Processing Rule : Clearance Constraint (Gap=6mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=6mil) (Max=40mil) (Preferred=10mil) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=100mil) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=2mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.5mil) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=3mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+Waived Violations Of Rule : Silk to Silk (Clearance=3mil) (All),(All)
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 3mil) Between Text "Pb" (177.015mil,407.487mil) on Bottom Overlay And Track (62.303mil,398.672mil)(175.303mil,511.672mil) on Bottom Overlay Silk Text to Silk Clearance [0mil]Waived by  at 10/15/2020 3:09:32 PM
+Waived Violations :1
+
+
+Violations Detected : 0
+Waived Violations : 1
+Time Elapsed        : 00:00:01
